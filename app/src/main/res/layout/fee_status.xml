@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/coursetablell"
+
+    android:id="@+id/feem">
+
+
+    <TableLayout
+        android:id="@+id/tb1"
+        style="@style/tablelayout"
+
+        tools:ignore="Suspicious0dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#f26201">
+
+            <TextView
+                android:id="@+id/tvsub"
+                style="@style/tabletextview"
+
+                android:text="Course Name"
+                />
+
+            <TextView
+                android:id="@+id/tvtitle"
+                style="@style/tabletextview"
+               android:text="Course Fees"
+                />
+
+            <TextView
+                android:id="@+id/tvprint"
+                style="@style/tabletextview"
+                android:text="Fees paid"
+                 />
+
+            <TextView
+                android:id="@+id/tvdownload"
+                style="@style/tabletextview"
+                android:text="Remaining Fees"
+                 />
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" />
+</LinearLayout>

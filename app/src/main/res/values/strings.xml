@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Duo Example</string>
+
+    <string name="hello_blank_fragment">This is the main fragment</string>
+
+    <string name="my_text"><u>Sign Up</u></string>
+
+    <array name="menuOptions">
+        <item>Course Details</item>
+        <item>Fee Status</item>
+        <item>Material</item>
+        <item>Timetable</item>
+        <item>Reports</item>
+        <item>Feedback</item>
+    </array>
+
+    <string-array name="items">
+        <item>Ahemdabad</item>
+        <item>Pune</item>
+        <item>Kolkata</item>
+        <item>Baroda</item>
+    </string-array>
+
+    <array name="menuOptions1">
+        <item>Upload Material</item>
+        <item>Send Notification</item>
+    </array>
+
+    <array name="menuOptions2">
+        <item>Upload Material</item>
+        <item>Working Schedule</item>
+        <item>Feedback</item>
+    </array>
+
+</resources>

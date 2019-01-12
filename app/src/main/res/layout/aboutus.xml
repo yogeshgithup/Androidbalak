@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abll1"
+    style="@style/llmain">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:weightSum="1">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="In this online Era, Every training centre do posses a domain containing various information in the form of static web pages but it does not  provide the particular functionalities the user  actually want. [So to overcome this particular issue] Our main aim is to create  a generic code  which will be compatible to satisfy all the requirements of any domain. creation of  a generic code will lead to a reduction of man-power and the problems of creating the same code with some different requirements repeatedly.Same code will be applicable to any of the Training centre like Ilets ,Nata ,Gre ,Neet ,Gujcet ,Jee ,CA ,11th-12th commerce/science Etc Etc...  " />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

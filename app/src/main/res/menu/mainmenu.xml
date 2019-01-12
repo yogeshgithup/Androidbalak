@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/menu"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_gallery"
+                android:icon="@drawable/gallery"
+                android:title="Gallery"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/action_course"
+                android:icon="@drawable/course"
+                android:title="Course Details"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/action_aboutus"
+                android:icon="@drawable/aboutus"
+                android:title="About Us"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/action_contactus"
+                android:icon="@drawable/contactus"
+                android:title="Contact Us"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+
+</menu>

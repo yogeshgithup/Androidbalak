@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".Homepage"
+    android:weightSum="1"
+    android:id="@+id/ctm"
+    >
+
+
+    <TableLayout
+        android:id="@+id/tb2"
+        style="@style/tablelayout"
+
+        tools:ignore="Suspicious0dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#f26021">
+
+            <TextView
+                android:id="@+id/tvcourse"
+                style="@style/tabletextview"
+
+                android:text="Course Name"
+                />
+
+
+            <TextView
+                android:id="@+id/tvfees"
+                style="@style/tabletextview"
+
+                android:text="Fees"
+                />
+            <TextView
+                android:id="@+id/tvduration"
+                style="@style/tabletextview"
+                android:text="duration"
+                />
+
+
+            <TextView
+                android:id="@+id/tvsub"
+                style="@style/tabletextview"
+
+                android:text="Subject"
+                />
+
+
+            <TextView
+                android:id="@+id/tvsection"
+                style="@style/tabletextview"
+
+                android:text="Section"
+                />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" />
+</LinearLayout>

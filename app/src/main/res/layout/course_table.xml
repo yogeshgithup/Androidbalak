@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/coursetablell"
+    tools:context=".Registration"
+
+    android:id="@+id/ctm">
+
+
+    <TableLayout
+        android:id="@+id/tb2"
+        style="@style/tablelayout"
+
+        tools:ignore="Suspicious0dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+
+            android:background="#f26201">
+
+            <TextView
+                android:id="@+id/tvsub"
+                style="@style/tabletextview"
+
+                android:text="Course Name"
+                />
+
+            <TextView
+                android:id="@+id/tvtitle"
+                style="@style/tabletextview"
+
+                android:text="Subject Name"
+               />
+
+            <TextView
+                android:id="@+id/tvprint"
+                style="@style/tabletextview"
+                android:text="Section Name"
+/>
+
+            <TextView
+                android:id="@+id/tvdownload"
+                style="@style/tabletextview"
+
+                android:text="Fees"
+                 />
+            <TextView
+                android:id="@+id/tvdownload1"
+                style="@style/tabletextview"
+                android:text="duration"
+               />
+
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" />
+</LinearLayout>
