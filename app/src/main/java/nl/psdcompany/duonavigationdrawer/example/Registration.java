@@ -23,6 +23,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import android.content.Intent;
 
 public class Registration extends AppCompatActivity {
     Button Submit,pro;
@@ -88,142 +89,150 @@ public class Registration extends AppCompatActivity {
         Submit = (Button) findViewById(R.id.b2);
         pro=(Button)findViewById(R.id.pro);
 
+        pro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Registration.this, Main2Activity.class);
+                startActivity(intent);
 
-//        Submit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                JSONArray ab = new JSONArray();
-//                JSONObject obj = new JSONObject();
-//
-//                try {
-//                    obj.put("FirstName",et1.getText().toString());
-//                    obj.put("MiddleName",et2.getText().toString());
-//                    obj.put("LastName",et3.getText().toString());
-//
-//                    int selectedId =rg.getCheckedRadioButtonId();
-//
-//                    rb = (RadioButton) findViewById(selectedId);
-//                    obj.put((String) tv2.getText(),rb.getText() );
-//
-//
-//                   /* if (rb1.isChecked()) {
-//                      //  rb2.setChecked(false);
-//                        obj.put((String) tv2.getText(), rb1.getText());
-//
-//                    } else if(rb2.isChecked()) {
-//                       // rb1.setChecked(false);
-//                        obj.put((String) tv2.getText(), rb2.getText());
-//
-//                    }*/
-//
-//                    obj.put("DateOfBirth", et4.getText());
-//                    obj.put("MobileNo", et5.getText());
-//                    obj.put("Email", et6.getText());
-//                    obj.put("ReEnterEmail", et7.getText());
-//
-//                    obj.put("HomeNo",et8.getText().toString());
-//                    obj.put("StreetNo",et9.getText().toString());
-//                    obj.put("StreetName",et10.getText().toString());
-//                    obj.put("Area",et11.getText().toString());
-//                    obj.put("City",et12.getText().toString());
-//                    obj.put("PinCode",et13.getText().toString());
-//
-//
-//                    JSONArray qua = new JSONArray();
-//                    String q1=et14.getText().toString().trim();
-//                    String q2=et15.getText().toString().trim();
-//                    String q3=et16.getText().toString().trim();
-//                    String q4=et17.getText().toString().trim();
-//                    if(q1.length()!=0) {
-//                        qua.put(q1);
-//                    }
-//                    if(q2.length()!=0) {
-//                        qua.put(q2);
-//                    }
-//                    if(q3.length()!=0) {
-//                        qua.put(q3);
-//                    }
-//                    if(q4.length()!=0) {
-//                        qua.put(q4);
-//                    }
-//                    obj.put("Qualification:",qua);
-//
-//                    obj.put("ParentName", et18.getText());
-//                    obj.put("ParentNo", et19.getText());
-//                    obj.put("GuardiansName", et20.getText());
-//                    obj.put("GuardiansNo",et21.getText());
-//                    obj.put("SelectCourse",sp1.getSelectedItem());
-//
-//
-//                    ab.put(obj);
-//                    Log.d("135", ab.toString());
-//
-//
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//
-//                MyTask1 mt1=new MyTask1();
-//                mt1.execute("http://192.168.1.3:8084/GETSReg/ServletAndroid",ab.toString());
-//
-//            }
-//        });
-//    }
-//
-//    class MyTask1 extends AsyncTask<String, String, String> {
-//
-//
-//        public String doInBackground(String... params) {
-//            String resp = null;
-//
-//            String weburl=params[0];
-//
-//            StringBuffer output=new StringBuffer();
-//            try {
-//                InputStream stream = null;
-//                // start of code of connnetion
-//                weburl=weburl+"?data="+params[1];
-//                Log.d("url",weburl);
-//                URL url = new URL(weburl);
-//                URLConnection connection = url.openConnection();
-//
-//                String sd = "abcbjj";
-//                Log.d("error41",sd);
-//                HttpURLConnection httpConnection = (HttpURLConnection) connection;
-//                String sm = "bnhjbc";
-//                Log.d("error42",sm);
-//                httpConnection.setRequestMethod("GET");
-//                String sg = "abcggh";
-//                Log.d("error43",sg);
-//                httpConnection.connect();
-//                String sk = "abcmj";
-//                Log.d("error44",sk);
-//                stream = httpConnection.getInputStream();
-//                String sl = "abckkii";
-//                Log.d("error46",sl);
-//                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
-//                String s = "abc";
-//                Log.d("error45",s);
-//                while ((s = buffer.readLine()) != null)
-//                    output.append(s);
-//            } catch (Exception e) {
-//                Log.e("error62",e.getMessage());
-//
-//            }
-//            return output.toString();
-//
-//
-//        }
-//
-//
-//
-//        protected void onPostExecute(String output) {
-//            Toast.makeText(Registration.this, output, Toast.LENGTH_SHORT).show();
-//            String n="get is called";
-//            Log.d("149",n);
-//
-//        }
+            }
+        });
+
+        Submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                JSONArray ab = new JSONArray();
+                JSONObject obj = new JSONObject();
+
+                try {
+                    obj.put("FirstName",et1.getText().toString());
+                    obj.put("MiddleName",et2.getText().toString());
+                    obj.put("LastName",et3.getText().toString());
+
+                    int selectedId =rg.getCheckedRadioButtonId();
+
+                    rb = (RadioButton) findViewById(selectedId);
+                    obj.put((String) tv2.getText(),rb.getText() );
+
+
+                   /* if (rb1.isChecked()) {
+                      //  rb2.setChecked(false);
+                        obj.put((String) tv2.getText(), rb1.getText());
+
+                    } else if(rb2.isChecked()) {
+                       // rb1.setChecked(false);
+                        obj.put((String) tv2.getText(), rb2.getText());
+
+                    }*/
+
+                    obj.put("DateOfBirth", et4.getText());
+                    obj.put("MobileNo", et5.getText());
+                    obj.put("Email", et6.getText());
+                    obj.put("ReEnterEmail", et7.getText());
+
+                    obj.put("HomeNo",et8.getText().toString());
+                    obj.put("StreetNo",et9.getText().toString());
+                    obj.put("StreetName",et10.getText().toString());
+                    obj.put("Area",et11.getText().toString());
+                    obj.put("City",et12.getText().toString());
+                    obj.put("PinCode",et13.getText().toString());
+
+
+                    JSONArray qua = new JSONArray();
+                    String q1=et14.getText().toString().trim();
+                    String q2=et15.getText().toString().trim();
+                    String q3=et16.getText().toString().trim();
+                    String q4=et17.getText().toString().trim();
+                    if(q1.length()!=0) {
+                        qua.put(q1);
+                    }
+                    if(q2.length()!=0) {
+                        qua.put(q2);
+                    }
+                    if(q3.length()!=0) {
+                        qua.put(q3);
+                    }
+                    if(q4.length()!=0) {
+                        qua.put(q4);
+                    }
+                    obj.put("Qualification:",qua);
+
+                    obj.put("ParentName", et18.getText());
+                    obj.put("ParentNo", et19.getText());
+                    obj.put("GuardiansName", et20.getText());
+                    obj.put("GuardiansNo",et21.getText());
+                    obj.put("SelectCourse",sp1.getSelectedItem());
+
+
+                    ab.put(obj);
+                    Log.d("135", ab.toString());
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                MyTask1 mt1=new MyTask1();
+                mt1.execute("http://192.168.1.6:8080/GETSWEB/SerPerson",ab.toString());
+
+            }
+        });
+    }
+
+    class MyTask1 extends AsyncTask<String, String, String> {
+
+
+        public String doInBackground(String... params) {
+            String resp = null;
+
+            String weburl=params[0];
+
+            StringBuffer output=new StringBuffer();
+            try {
+                InputStream stream = null;
+                // start of code of connnetion
+                weburl=weburl+"?data="+params[1];
+                Log.d("url",weburl);
+                URL url = new URL(weburl);
+                URLConnection connection = url.openConnection();
+
+                String sd = "abcbjj";
+                Log.d("error41",sd);
+                HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                String sm = "bnhjbc";
+                Log.d("error42",sm);
+                httpConnection.setRequestMethod("GET");
+                String sg = "abcggh";
+                Log.d("error43",sg);
+                httpConnection.connect();
+                String sk = "abcmj";
+                Log.d("error44",sk);
+                stream = httpConnection.getInputStream();
+                String sl = "abckkii";
+                Log.d("error46",sl);
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "abc";
+                Log.d("error45",s);
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+            } catch (Exception e) {
+                Log.e("error62",e.getMessage());
+
+            }
+            return output.toString();
+
+
+        }
+
+
+
+        protected void onPostExecute(String output) {
+            Toast.makeText(Registration.this, output, Toast.LENGTH_SHORT).show();
+            String n="get is called";
+            Log.d("149",n);
+
+        }
 
 
     }

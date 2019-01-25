@@ -3,6 +3,16 @@
 
     package="nl.psdcompany.duonavigationdrawer.example">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
 
     <application
         android:allowBackup="true"
@@ -65,6 +75,8 @@
             android:label="Contact Us" />
         <activity android:name=".Course"
             android:label="course details"/>
+        <activity android:name=".Main2Activity"
+            android:label="Upload"/>
 
     </application>
 </manifest>
