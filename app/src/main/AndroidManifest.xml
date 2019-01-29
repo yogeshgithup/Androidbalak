@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning"
         android:theme="@style/AppTheme">
-        <activity android:name=".Homepage"
+        <activity android:name=".HomePage"
                   android:label="GetS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
