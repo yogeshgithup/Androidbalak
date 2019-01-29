@@ -76,7 +76,7 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
     @Override
     public boolean onFooterClicked() {
 
-        startActivity(new Intent(this, Homepage.class));
+        startActivity(new Intent(this, HomePage.class));
         return true;
         // Toast.makeText(this, "onFooterClicked", Toast.LENGTH_SHORT).show();
     }

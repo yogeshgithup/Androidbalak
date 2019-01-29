@@ -106,14 +106,14 @@ public class Registration extends AppCompatActivity {
                 JSONObject obj = new JSONObject();
 
                 try {
-                    obj.put("FirstName",et1.getText().toString());
-                    obj.put("MiddleName",et2.getText().toString());
-                    obj.put("LastName",et3.getText().toString());
+                    obj.put("f_name",et1.getText().toString());
+                    obj.put("m_name",et2.getText().toString());
+                    obj.put("l_name",et3.getText().toString());
 
                     int selectedId =rg.getCheckedRadioButtonId();
 
                     rb = (RadioButton) findViewById(selectedId);
-                    obj.put((String) tv2.getText(),rb.getText() );
+                    obj.put((String)tv2.getText(),rb.getText());
 
 
                    /* if (rb1.isChecked()) {
@@ -126,17 +126,17 @@ public class Registration extends AppCompatActivity {
 
                     }*/
 
-                    obj.put("DateOfBirth", et4.getText());
-                    obj.put("MobileNo", et5.getText());
-                    obj.put("Email", et6.getText());
+                    obj.put("dob", et4.getText());
+                    obj.put("contact_no", et5.getText());
+                    obj.put("email", et6.getText());
                     obj.put("ReEnterEmail", et7.getText());
 
-                    obj.put("HomeNo",et8.getText().toString());
-                    obj.put("StreetNo",et9.getText().toString());
-                    obj.put("StreetName",et10.getText().toString());
-                    obj.put("Area",et11.getText().toString());
-                    obj.put("City",et12.getText().toString());
-                    obj.put("PinCode",et13.getText().toString());
+                    obj.put("home_no",et8.getText().toString());
+                    obj.put("street_no",et9.getText().toString());
+                    obj.put("street_name",et10.getText().toString());
+                    obj.put("area",et11.getText().toString());
+                    obj.put("city",et12.getText().toString());
+                    obj.put("pincode",et13.getText().toString());
 
 
                     JSONArray qua = new JSONArray();
@@ -156,13 +156,13 @@ public class Registration extends AppCompatActivity {
                     if(q4.length()!=0) {
                         qua.put(q4);
                     }
-                    obj.put("Qualification:",qua);
+                    obj.put("qualification:",qua);
 
-                    obj.put("ParentName", et18.getText());
-                    obj.put("ParentNo", et19.getText());
-                    obj.put("GuardiansName", et20.getText());
-                    obj.put("GuardiansNo",et21.getText());
-                    obj.put("SelectCourse",sp1.getSelectedItem());
+                    obj.put("parent_name", et18.getText());
+                    obj.put("parent_contact_no", et19.getText());
+                    obj.put("guardian_name", et20.getText());
+                    obj.put("guardian_contact_no",et21.getText());
+                    obj.put("course",sp1.getSelectedItem());
 
 
                     ab.put(obj);
@@ -174,7 +174,7 @@ public class Registration extends AppCompatActivity {
                 }
 
                 MyTask1 mt1=new MyTask1();
-                mt1.execute("http://192.168.1.6:8080/GETSWEB/SerPerson",ab.toString());
+                mt1.execute("http://192.168.1.6:8080/GETSWEB/SerPersonAndroid",ab.toString());
 
             }
         });
@@ -202,6 +202,7 @@ public class Registration extends AppCompatActivity {
                 HttpURLConnection httpConnection = (HttpURLConnection) connection;
                 String sm = "bnhjbc";
                 Log.d("error42",sm);
+
                 httpConnection.setRequestMethod("GET");
                 String sg = "abcggh";
                 Log.d("error43",sg);
