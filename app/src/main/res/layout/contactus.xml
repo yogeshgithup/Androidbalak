@@ -37,11 +37,10 @@
                     android:text="ContactNo:" />
 
                 <TextView
-                    android:id="@+id/textView28"
+                    android:id="@+id/tvc1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="..........." />
+                    android:layout_weight="2" />
 
             </LinearLayout>
 
@@ -63,11 +62,10 @@
                     android:text="Email" />
 
                 <TextView
-                    android:id="@+id/textView30"
+                    android:id="@+id/tvc2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="......." />
+                    android:layout_weight="2" />
 
             </LinearLayout>
 
@@ -90,11 +88,10 @@
                     android:text="Address:" />
 
                 <TextView
-                    android:id="@+id/textView31"
+                    android:id="@+id/tvc3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text=".........." />
+                    android:layout_weight="2" />
 
             </LinearLayout>
         </LinearLayout>
