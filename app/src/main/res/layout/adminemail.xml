@@ -42,8 +42,7 @@
             android:id="@+id/tvd1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="......" />
+            android:layout_weight="2" />
 
     </LinearLayout>
 
@@ -69,8 +68,7 @@
             android:id="@+id/tvd2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="....." />
+            android:layout_weight="2" />
 
     </LinearLayout>
 
@@ -95,8 +93,7 @@
             android:id="@+id/tvd3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="..." />
+            android:layout_weight="2" />
 
     </LinearLayout>
 
@@ -122,8 +119,7 @@
             android:id="@+id/tvd4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="......" />
+            android:layout_weight="2" />
 
     </LinearLayout>
         </LinearLayout>
