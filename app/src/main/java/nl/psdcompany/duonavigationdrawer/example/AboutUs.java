@@ -29,7 +29,7 @@ public class AboutUs extends AppCompatActivity {
 
 
         MyTask1 mt1 = new MyTask1();
-        mt1.execute("http://192.168.1.53:8080/GETSWEB/SerContactus");
+        mt1.execute("http://192.168.1.53:8080/GETSWEB/SerAndroidMenu");
 
     }
     private class MyTask1 extends AsyncTask<String, String, String> {

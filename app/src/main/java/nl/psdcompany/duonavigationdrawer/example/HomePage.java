@@ -61,8 +61,9 @@ public class HomePage extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+
                 MyTask1 mt1=new MyTask1();
-                mt1.execute("http://192.168.1.6:8080/GETSWEB/SerLogin",ab.toString());
+                mt1.execute("http://192.168.1.53:8080/GETSWEB/SerLogin",ab.toString());
 
 
             }

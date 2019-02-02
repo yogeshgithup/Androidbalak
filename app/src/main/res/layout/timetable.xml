@@ -7,148 +7,231 @@
 
     android:id="@+id/stimem">
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f26201"
+        android:columnCount="7"
+        android:rowCount="2">
 
-    <TableLayout
-        android:id="@+id/tb5"
-       style="@style/tablelayout_for_timetable_and_ws"
-
-
-        tools:ignore="Suspicious0dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="#f26201"
-            android:weightSum="6">
-
-            <TextView
-                android:id="@+id/tvday"
-                style="@style/tabletextview"
-                android:text="Day"
-                />
-            <TextView
-                android:id="@+id/tvsubj"
-                style="@style/tabletextview"
-                android:text="Subject"
-                 />
-
-            <TextView
-                android:id="@+id/tvslot"
-                style="@style/tabletextview_for_timetable_and_ws"
-                android:gravity="center"
-                android:text="Slot"/>
-
-            <TextView
-                android:id="@+id/tvbreak"
-                style="@style/tabletextview_for_timetable_and_ws"
-
-                android:gravity="center"
-                android:text="Breaktime"
-               />
-
-
-        </TableRow>
-        <TableRow
+        <TextView
+            android:id="@+id/tvday"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom">
+            android:layout_columnWeight="1"
+            android:layout_rowSpan="2"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:gravity="center_horizontal"
+            android:text="Day" />
+        <TextView
+            android:id="@+id/tvsubj"
+            android:layout_width="0dp"
+            android:layout_columnWeight="1"
+            android:gravity="center_horizontal"
+            android:layout_gravity="fill"
+            android:layout_rowSpan="2"
+            android:text="Subject"
+            android:layout_column="2"
+            />
 
-            <TextView
-                android:id="@+id/tvday1"
-                android:layout_width="0dip"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="1dp"
-                android:layout_weight="1"
-                android:background="#FFF"
-                android:gravity="left"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
-                android:text=""
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        <TextView
+            android:id="@+id/tvslot"
+            android:layout_width="0dp"
+            android:layout_columnWeight="2"
+            android:layout_columnSpan="2"
+            android:gravity="center_horizontal"
+            android:layout_gravity="fill"
+            android:text="Slot"/>
 
-            <TextView
-                android:id="@+id/tvsubj1"
-                android:layout_width="0dip"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="1dp"
-                android:layout_weight="1"
-                android:background="#FFF"
-                android:gravity="left"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
-                android:text=""
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        <TextView
+            android:id="@+id/tvbreak"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="2"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:text="Breaktime"
+            />
 
-            <TextView
-                android:id="@+id/tvstart"
-                style="@style/tabletextview"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="1dp"
-                android:layout_weight="1"
-                android:background="#FFF"
-                android:gravity="left"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
-                android:text="Start-time"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        <TextView
+            android:id="@+id/tvstart"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_column="3"
+            android:text="Start-time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/tvend"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="1dp"
-                android:layout_weight="1"
-                android:background="#FFF"
-                android:gravity="left"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
-                android:text="End-time"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        <TextView
+            android:id="@+id/tvend"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_column="4"
+            android:text="End-time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
 
-            <TextView
-                android:id="@+id/tvstart1"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="1dp"
-                android:layout_weight="1"
-                android:background="#FFF"
-                android:gravity="left"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
-                android:text="Start-time"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+        <TextView
+            android:id="@+id/tvstart1"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_column="5"
+            android:text="Start-time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/tvend1"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="1dp"
-                android:layout_weight="1"
-                android:background="#FFF"
-                android:gravity="left"
-                android:paddingBottom="5dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
-                android:text="End-time"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-        </TableRow>
+        <TextView
+            android:id="@+id/tvend1"
+            android:layout_width="0dp"
+            android:gravity="center_horizontal"
+            android:layout_columnWeight="1"
+            android:layout_column="6"
+            android:text="End-time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    </GridLayout>
+    <!--<TableLayout-->
+    <!--android:id="@+id/tb5"-->
+    <!--style="@style/tablelayout_for_timetable_and_ws"-->
 
 
-    </TableLayout>
+    <!--tools:ignore="Suspicious0dp">-->
+
+    <!--<TableRow-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:background="#f26201"-->
+    <!--android:weightSum="6">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvday"-->
+    <!--style="@style/tabletextview"-->
+    <!--android:text="Day"-->
+    <!--/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/tvsubj"-->
+    <!--style="@style/tabletextview"-->
+    <!--android:text="Subject"-->
+    <!--/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvslot"-->
+    <!--style="@style/tabletextview_for_timetable_and_ws"-->
+    <!--android:gravity="center"-->
+    <!--android:text="Slot"/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvbreak"-->
+    <!--style="@style/tabletextview_for_timetable_and_ws"-->
+
+    <!--android:gravity="center"-->
+    <!--android:text="Breaktime"-->
+    <!--/>-->
+
+
+    <!--</TableRow>-->
+    <!--<TableRow-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvday1"-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_marginLeft="1dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="#FFF"-->
+    <!--android:gravity="left"-->
+    <!--android:paddingBottom="5dp"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:paddingRight="5dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:text=""-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body2" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvsubj1"-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_marginLeft="1dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="#FFF"-->
+    <!--android:gravity="left"-->
+    <!--android:paddingBottom="5dp"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:paddingRight="5dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:text=""-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body2" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvstart"-->
+    <!--style="@style/tabletextview"-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="1dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="#FFF"-->
+    <!--android:gravity="left"-->
+    <!--android:paddingBottom="5dp"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:paddingRight="5dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:text="Start-time"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body2" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvend"-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="1dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="#FFF"-->
+    <!--android:gravity="left"-->
+    <!--android:paddingBottom="5dp"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:paddingRight="5dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:text="End-time"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body2" />-->
+
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvstart1"-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="1dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="#FFF"-->
+    <!--android:gravity="left"-->
+    <!--android:paddingBottom="5dp"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:paddingRight="5dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:text="Start-time"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body2" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvend1"-->
+    <!--android:layout_width="0dip"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="1dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="#FFF"-->
+    <!--android:gravity="left"-->
+    <!--android:paddingBottom="5dp"-->
+    <!--android:paddingLeft="5dp"-->
+    <!--android:paddingRight="5dp"-->
+    <!--android:paddingTop="5dp"-->
+    <!--android:text="End-time"-->
+    <!--android:textAppearance="@style/TextAppearance.AppCompat.Body2" />-->
+    <!--</TableRow>-->
+    <!--</TableLayout>-->
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
