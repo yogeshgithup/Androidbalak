@@ -52,7 +52,7 @@ public class ChangePswd extends AppCompatActivity {
                     Log.d("135", ab.toString());
 
                     MyTask1 mt1=new MyTask1();
-                    mt1.execute("http://192.168.1.6:8080/GETSWEB/SerChangePassword",ab.toString());
+                    mt1.execute("http://192.168.1.53:8080/GETSWEB/SerChangePassword",ab.toString());
 
 
 

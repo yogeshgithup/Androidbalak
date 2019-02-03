@@ -128,8 +128,7 @@
                         android:layout_width="match_parent"
                         android:layout_weight="1"
                         style="@style/textview"
-                        android:text="Gender:
-"
+                        android:text="Gender:"
                         tools:ignore="Suspicious0dp" />
 
                 </LinearLayout>
