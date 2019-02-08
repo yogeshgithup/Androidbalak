@@ -34,7 +34,7 @@ public class ContactUs extends AppCompatActivity {
 
 
         MyTask1 mt1 = new MyTask1();
-        mt1.execute("http://192.168.1.53:8080/GETSWEB/SerAndroidMenu");
+        mt1.execute("http://192.168.1.68:8080/GETSWEB/SerAndroidMenu");
 
 
     }
