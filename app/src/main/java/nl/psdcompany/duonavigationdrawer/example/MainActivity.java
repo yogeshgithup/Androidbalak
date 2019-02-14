@@ -153,7 +153,13 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_email) {
-            startActivity(new Intent(this, StudentEmail.class));
+
+            Intent iii=getIntent();
+            String u=iii.getStringExtra("Username");
+
+            iii=new Intent(MainActivity.this,StaffEmail.class);
+            iii.putExtra("Username",u);
+            startActivity(iii);
             return true;
         }
         if (id == R.id.action_changepswd) {

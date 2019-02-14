@@ -52,7 +52,7 @@
             android:label="individual"/>
         <activity
             android:name=".AdminEmail"
-            android:label="Email" />
+            android:label="Profile" />
         <activity
             android:name=".Gallery"
             android:largeHeap="true"
@@ -63,7 +63,7 @@
             android:label="Email" />
         <activity
             android:name=".StaffEmail"
-            android:label="Email" />
+            android:label="Profile" />
         <activity
             android:name=".ChangePswd"
             android:label="Change Password" />

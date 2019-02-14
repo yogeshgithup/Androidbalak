@@ -107,33 +107,32 @@ public class Registration extends AppCompatActivity {
 
                 try {
                     obj.put("f_name",et1.getText().toString());
-                    obj.put("m_name",et2.getText().toString());
-                    obj.put("l_name",et3.getText().toString());
+                  obj.put("m_name",et2.getText().toString());
+                 obj.put("l_name",et3.getText().toString());
 
-                    int selectedId =rg.getCheckedRadioButtonId();
+                  int selectedId =rg.getCheckedRadioButtonId();
 
                     rb = (RadioButton) findViewById(selectedId);
                     obj.put((String)tv2.getText(),rb.getText());
 
 
-                   /* if (rb1.isChecked()) {
-                      //  rb2.setChecked(false);
-                        obj.put((String) tv2.getText(), rb1.getText());
-
-                    } else if(rb2.isChecked()) {
-                       // rb1.setChecked(false);
-                        obj.put((String) tv2.getText(), rb2.getText());
-
-                    }*/
-
-                    obj.put("dob", et4.getText());
+//                   /* if (rb1.isChecked()) {
+//                      //  rb2.setChecked(false);
+//                        obj.put((String) tv2.getText(), rb1.getText());
+//
+//                    } else if(rb2.isChecked()) {
+//                       // rb1.setChecked(false);
+//                        obj.put((String) tv2.getText(), rb2.getText());
+//
+//                    }*/
+//
+          obj.put("dob", et4.getText());
                     obj.put("contact_no", et5.getText());
-                    obj.put("email", et6.getText());
-                    obj.put("ReEnterEmail", et7.getText());
-
+                 obj.put("email", et6.getText());
+                 obj.put("ReEnterEmail", et7.getText());
                     obj.put("home_no",et8.getText().toString());
-                    obj.put("street_no",et9.getText().toString());
-                    obj.put("street_name",et10.getText().toString());
+                  obj.put("street_no",et9.getText().toString());
+                   obj.put("street_name",et10.getText().toString());
                     obj.put("area",et11.getText().toString());
                     obj.put("city",et12.getText().toString());
                     obj.put("pincode",et13.getText().toString());
@@ -158,7 +157,7 @@ public class Registration extends AppCompatActivity {
                     }
                     obj.put("qualification:",qua);
 
-                    obj.put("parent_name", et18.getText());
+                   obj.put("parent_name", et18.getText());
                     obj.put("parent_contact_no", et19.getText());
                     obj.put("guardian_name", et20.getText());
                     obj.put("guardian_contact_no",et21.getText());
@@ -174,6 +173,7 @@ public class Registration extends AppCompatActivity {
                 }
 
                 MyTask1 mt1=new MyTask1();
+
                 mt1.execute("http://192.168.1.53:8080/GETSWEB/SerPersonAndroid",ab.toString());
 
             }

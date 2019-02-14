@@ -51,6 +51,7 @@ public class HomePage extends AppCompatActivity {
 
                 try {
                     obj.put("Username",uname.getText().toString());
+
                     obj.put("Password",pswd.getText().toString());
 
                     ab.put(obj);
@@ -60,14 +61,23 @@ public class HomePage extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
+//                Intent i = new Intent(HomePage.this,MainAdmin.class);
+//                i.putExtra("Username",uname.getText().toString());
+//                startActivity(i);
+//
+//                Intent ii = new Intent(HomePage.this,MainStaff.class);
+//                ii.putExtra("Username",uname.getText().toString());
+//                startActivity(ii);
+//
 
                 MyTask1 mt1=new MyTask1();
+
                 mt1.execute("http://192.168.1.31:8084/GETSWEB/SerLogin",ab.toString());
 
 
             }
         });
+
 
 
         fpwd.setOnClickListener(new View.OnClickListener() {
@@ -146,18 +156,22 @@ public class HomePage extends AppCompatActivity {
             if (output.equals("A1")) {
                 Toast.makeText(HomePage.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HomePage.this, MainAdmin.class);
+                intent.putExtra("Username",uname.getText().toString());
                 startActivity(intent);
 
 
             } else if (output.equals("F")) {
                 Toast.makeText(HomePage.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HomePage.this, MainStaff.class);
+                intent.putExtra("Username",uname.getText().toString());
                 startActivity(intent);
 
             } else if (output.equals("S")) {
                 Toast.makeText(HomePage.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HomePage.this, MainActivity.class);
+                intent.putExtra("Username",uname.getText().toString());
                 startActivity(intent);
+
 
             } else {
                 Toast.makeText(HomePage.this, "LogIn Failed", Toast.LENGTH_SHORT).show();
