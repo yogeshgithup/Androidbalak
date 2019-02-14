@@ -55,6 +55,7 @@
             android:label="Email" />
         <activity
             android:name=".Gallery"
+            android:largeHeap="true"
             android:label="Gallery" />
 
         <activity
