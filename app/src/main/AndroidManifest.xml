@@ -55,6 +55,7 @@
             android:label="Profile" />
         <activity
             android:name=".Gallery"
+            android:largeHeap="true"
             android:label="Gallery" />
 
         <activity
