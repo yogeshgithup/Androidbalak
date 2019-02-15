@@ -57,21 +57,14 @@
     </style>
 
     <style name="tabletextview">
-        <item name="android:layout_width">0dip</item>
-        <item name=" android:layout_height">match_parent</item>
-
-        <item name=" android:layout_marginBottom">1dp</item>
-        <item name=" android:layout_marginLeft">1dp</item>
-        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">1dp</item>
         <item name="android:layout_weight">1</item>
-        <item name=" android:background">#FFF</item>
-        <item name=" android:gravity">left</item>
-
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingLeft">5dp</item>
-        <item name=" android:paddingRight">5dp</item>
-        <item name="android:paddingTop">5dp</item>
-
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">#f26021</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
 
     </style>

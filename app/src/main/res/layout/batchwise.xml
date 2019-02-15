@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/batchwisell"
-    android:id="@+id/batwm">
+    android:id="@+id/batwm"
+    android:layout_margin="5dp">
 
 
     <LinearLayout
@@ -25,6 +26,8 @@
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="2">
 
             <LinearLayout
@@ -34,40 +37,27 @@
                 android:layout_weight="2"
                 android:orientation="vertical">
 
-                <RadioGroup
+
+                <CheckBox
+                    android:id="@+id/checkBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:theme="@style/MyRadioButton"
-                    >
-
-                    <RadioButton
-                        android:id="@+id/rb1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Batch 1" />
-
-                    <RadioButton
-                        android:id="@+id/rb2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Batch 2" />
-
-                    <RadioButton
-                        android:id="@+id/rb3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Batch 3" />
-
-                    <RadioButton
-                        android:id="@+id/rb4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Batch 4" />
-                </RadioGroup>
+                    android:text="CheckBox" />
+                <CheckBox
+                    android:id="@+id/checkBox1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CheckBox" />
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CheckBox" />
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CheckBox" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -78,7 +68,6 @@
         android:layout_weight="1"
         android:id="@+id/batw2"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
         tools:ignore="Suspicious0dp">
 
         <TextView
