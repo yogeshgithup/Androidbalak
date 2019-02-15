@@ -7,9 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RatingBar;
 
+
+
 public class Feedback extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -23,8 +27,9 @@ public class Feedback extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-       RatingBar ratingbar=(RatingBar)getActivity().findViewById(R.id.ratingBar);
+        RatingBar ratingbar=(RatingBar)getActivity().findViewById(R.id.ratingBar);
         getActivity().setTitle("Feedback");
     }
+
 
 }

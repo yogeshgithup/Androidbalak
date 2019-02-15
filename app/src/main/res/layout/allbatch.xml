@@ -18,7 +18,7 @@
         tools:ignore="Suspicious0dp">
 
         <TextView
-            android:id="@+id/t1"
+            android:id="@+id/tvb1"
             style="@style/textview"
 
             android:text="Message  :" />
@@ -32,7 +32,7 @@
             android:layout_weight="2">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/editText3"
+                android:id="@+id/edtb1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/MyEditText"
@@ -52,7 +52,7 @@
         tools:ignore="Suspicious0dp">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/sendd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
