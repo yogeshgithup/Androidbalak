@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/coursetablell"
 
+    android:layout_margin="5dp"
     android:id="@+id/feem">
 
 
@@ -50,9 +51,4 @@
 
     </TableLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical" />
 </LinearLayout>

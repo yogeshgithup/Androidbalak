@@ -5,7 +5,7 @@
 
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/coursetablell"
-
+    android:layout_margin="5dp"
     android:id="@+id/srepm">
 
 

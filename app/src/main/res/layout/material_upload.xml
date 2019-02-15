@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/coursetablell"
-
+    android:layout_margin="5dp"
     tools:context=".Registration"
 
     android:id="@+id/matm">
