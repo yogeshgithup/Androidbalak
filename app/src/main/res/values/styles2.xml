@@ -41,7 +41,8 @@
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body2</item>
         <item name="android:textColor">#2988BC</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:gravity">left</item>
+        <item name="android:gravity">center|start</item>
+
     </style>
 
     <style name="tablelayout">
