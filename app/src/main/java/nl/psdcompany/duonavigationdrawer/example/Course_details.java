@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class Course_details extends Fragment {
 
     private ArrayList<person> datalist;
-    String url="http://192.168.1.95:8080/GETSWEB/SerCourseAndroid";
+    String url="http://192.168.43.112:8080/GETSWEB/SerCourseAndroid";
     TableLayout tableLayout;
     @Nullable
     @Override
