@@ -20,7 +20,7 @@
 
             android:id="@+id/tfp1"
             style="@style/textview"
-
+            android:gravity="center"
             android:text="Enter E-mail  :" />
 
         <android.support.design.widget.TextInputLayout
