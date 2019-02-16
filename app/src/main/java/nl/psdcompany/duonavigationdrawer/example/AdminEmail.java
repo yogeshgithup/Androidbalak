@@ -52,7 +52,7 @@ public class AdminEmail extends AppCompatActivity {
         }
 
         MyTask1 mt1 = new MyTask1();
-        mt1.execute("http://192.168.1.68:8080/GETSWEB/SerDetailsAndroid",ab.toString());
+        mt1.execute("http://192.168.1.95:8080/GETSWEB/SerDetailsAndroid",ab.toString());
 
     }
 

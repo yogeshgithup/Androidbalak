@@ -44,7 +44,7 @@ public class MainStaff extends AppCompatActivity implements DuoMenuView.OnMenuCl
         handleDrawer();
 
         // Show main fragment in container
-        goToFragment(new Course_details(), false);
+        goToFragment(new Material_upload(), false);
         mMenuAdapter.setViewSelected(0, true);
         setTitle(mTitles.get(0));
 
