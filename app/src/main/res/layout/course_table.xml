@@ -9,15 +9,16 @@
     android:id="@+id/ctm">
 
 
+
     <TableLayout
         android:id="@+id/tb2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.13"
         android:layout_marginTop="10dp"
+        android:layout_weight="0.13"
+        android:gravity="bottom"
         android:paddingLeft="1dp"
         android:paddingRight="1dp"
-        android:gravity="bottom"
         android:stretchColumns="*"
         tools:ignore="Suspicious0dp">
 
@@ -25,52 +26,50 @@
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="bottom"
-            android:background="#FFFFFF"
-            android:layout_margin="1dp">
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/tvcourse"
+                style="@style/tabletextview"
+                android:text="Course Name" />
+
+
+            <TextView
+                android:id="@+id/tvfees"
+                style="@style/tabletextview"
+
+                android:text="Fees" />
+
+            <TextView
+                android:id="@+id/tvduration"
+                style="@style/tabletextview"
+                android:text="duration" />
+
 
             <TextView
                 android:id="@+id/tvsub"
                 style="@style/tabletextview"
 
-                android:text="Course Name"
-                />
+                android:text="Subject" />
+
 
             <TextView
-                android:id="@+id/tvtitle"
+                android:id="@+id/tvsection"
                 style="@style/tabletextview"
 
-                android:text="Subject Name"
-               />
-
-            <TextView
-                android:id="@+id/tvprint"
-                style="@style/tabletextview"
-                android:text="Section Name" />
-
-            <TextView
-                android:id="@+id/tvdownload"
-                style="@style/tabletextview"
-
-                android:text="Fees"
-                 />
-            <TextView
-                android:id="@+id/tvdownload1"
-                style="@style/tabletextview"
-                android:text="duration"
-               />
-
-
+                android:text="Section" />
 
         </TableRow>
 
 
     </TableLayout>
+
     <ScrollView
+        android:id="@+id/scid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="top"
         android:layout_weight="0.87"
-        android:id="@+id/scid"
         tools:ignore="Suspicious0dp">
 
         <TableLayout
@@ -95,70 +94,89 @@
 
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
                     android:id="@+id/course"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:background="#f26021"
-                   android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible"/>
-
-                <TextView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <TextView
                     android:id="@+id/subject"
-                    android:gravity="center"
-
-                    android:layout_marginLeft="1dp"
-                    android:layout_weight="1"
-                    android:background="#f26021"
-                    android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible"/>
-
-                <TextView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <TextView
                     android:id="@+id/section"
-                    android:gravity="center"
-
-                    android:layout_marginLeft="1dp"
-                    android:layout_weight="1"
-                    android:background="#f26021"
-                    android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible"/>
-
-                <TextView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <TextView
                     android:id="@+id/fees"
-                    android:gravity="center"
-
-                    android:layout_marginLeft="1dp"
-                    android:layout_weight="1"
-                    android:background="#f26021"
-                    android:padding="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible"/>
-                <TextView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:id="@+id/duration"
-                    android:gravity="center"
-
                     android:layout_marginLeft="1dp"
+
                     android:layout_weight="1"
                     android:background="#f26021"
-                    android:padding="5dp"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible"/>
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
 
             </TableRow>
 
         </TableLayout>
     </ScrollView>
+
 
 </LinearLayout>
