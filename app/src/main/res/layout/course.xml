@@ -15,23 +15,25 @@
         android:id="@+id/tb2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="0.13"
+        android:layout_weight="0.15"
         android:gravity="bottom"
         android:paddingLeft="1dp"
         android:paddingRight="1dp"
         android:stretchColumns="*"
+        android:weightSum="1"
         tools:ignore="Suspicious0dp">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
             android:layout_gravity="bottom"
             android:background="#FFFFFF">
 
             <TextView
                 android:id="@+id/tvcourse"
                 style="@style/tabletextview"
+                android:padding="0dp"
                 android:text="Course Name" />
 
 
@@ -39,11 +41,13 @@
                 android:id="@+id/tvfees"
                 style="@style/tabletextview"
 
+                android:padding="0dp"
                 android:text="Fees" />
 
             <TextView
                 android:id="@+id/tvduration"
                 style="@style/tabletextview"
+                android:padding="0dp"
                 android:text="duration" />
 
 
@@ -51,6 +55,7 @@
                 android:id="@+id/tvsub"
                 style="@style/tabletextview"
 
+                android:padding="0dp"
                 android:text="Subject" />
 
 
@@ -58,6 +63,7 @@
                 android:id="@+id/tvsection"
                 style="@style/tabletextview"
 
+                android:padding="0dp"
                 android:text="Section" />
 
         </TableRow>
@@ -70,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="top"
-        android:layout_weight="0.87">
+        android:layout_weight="0.85">
 
         <TableLayout
             android:id='@+id/tablelayout'

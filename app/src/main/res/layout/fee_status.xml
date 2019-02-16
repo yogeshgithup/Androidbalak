@@ -2,28 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/coursetablell"
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:weightSum="1"
     android:id="@+id/feem">
 
 
     <TableLayout
         android:id="@+id/tb1"
-        style="@style/tablelayout"
-
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:gravity="bottom"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:stretchColumns="*"
+        android:weightSum="1"
         tools:ignore="Suspicious0dp">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
             android:layout_gravity="bottom"
-            android:background="#f26201">
+            android:background="#FFFFFF">
 
             <TextView
                 android:id="@+id/tvsub"
                 style="@style/tabletextview"
 
+                android:padding="0dp"
                 android:text="Course Name"
                 />
 
@@ -31,17 +41,20 @@
                 android:id="@+id/tvtitle"
                 style="@style/tabletextview"
                android:text="Course Fees"
+                android:padding="0dp"
                 />
 
             <TextView
                 android:id="@+id/tvprint"
                 style="@style/tabletextview"
                 android:text="Fees paid"
+                android:padding="0dp"
                  />
 
             <TextView
                 android:id="@+id/tvdownload"
                 style="@style/tabletextview"
+                android:padding="0dp"
                 android:text="Remaining Fees"
                  />
 
@@ -50,5 +63,103 @@
 
 
     </TableLayout>
+    <ScrollView
+        android:id="@+id/scid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="top"
+        android:layout_weight="0.85"
+        tools:ignore="Suspicious0dp">
+
+        <TableLayout
+            android:id='@+id/tablelayout'
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+
+            android:layout_gravity="top"
+            android:orientation="vertical"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:stretchColumns="*">
+
+            <TableRow
+                android:id='@+id/trr'
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+
+                <!--android:background="#000"-->
+
+
+                <TextView
+                    android:id="@+id/course"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/subject"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/section"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/fees"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
 
 </LinearLayout>
