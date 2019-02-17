@@ -39,26 +39,26 @@
                 android:id="@+id/tvfees"
                 style="@style/tabletextview"
 
-                android:text="Fees" />
+                android:text="Subject" />
 
             <TextView
                 android:id="@+id/tvduration"
                 style="@style/tabletextview"
-                android:text="duration" />
+                android:text="Section" />
 
 
             <TextView
                 android:id="@+id/tvsub"
                 style="@style/tabletextview"
 
-                android:text="Subject" />
+                android:text="Fees" />
 
 
             <TextView
                 android:id="@+id/tvsection"
                 style="@style/tabletextview"
 
-                android:text="Section" />
+                android:text="Duration" />
 
         </TableRow>
 
