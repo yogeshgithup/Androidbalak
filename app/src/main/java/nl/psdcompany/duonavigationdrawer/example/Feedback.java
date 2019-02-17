@@ -32,13 +32,10 @@ Button buttonr;
         RatingBar ratingbar=(RatingBar)getActivity().findViewById(R.id.ratingBar);
         getActivity().setTitle("Feedback");
 
-        addListenerOnButtonClick(view);
-    }
 
-    public void addListenerOnButtonClick(View v){
-        rtn=(RatingBar)v.findViewById(R.id.ratingBar);
+        rtn=(RatingBar)view.findViewById(R.id.ratingBar);
 
-        buttonr=(Button)v.findViewById(R.id.buttonr);
+        buttonr=(Button)view.findViewById(R.id.buttonr);
 
         buttonr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +47,6 @@ Button buttonr;
         });
 
 
-
     }
+
     }
