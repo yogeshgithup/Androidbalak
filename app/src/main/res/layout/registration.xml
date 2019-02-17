@@ -25,7 +25,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="3"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -113,6 +113,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:id="@+id/batw1"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:weightSum="3"
 
@@ -179,6 +180,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
+                android:layout_marginTop="10dp"
 
                 android:orientation="horizontal">
 
@@ -217,7 +219,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -254,7 +256,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -292,7 +294,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -338,7 +340,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="6"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -482,7 +484,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -508,15 +510,13 @@
                 </LinearLayout>
             </LinearLayout>
 
-
-
             <LinearLayout
                 android:id="@+id/reg9"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -626,7 +626,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -662,7 +662,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -699,7 +699,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -735,7 +735,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -773,7 +773,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:weightSum="3"
-
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -797,6 +797,7 @@
             android:layout_height="0dp"
             android:layout_weight="2"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
 

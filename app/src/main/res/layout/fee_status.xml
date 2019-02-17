@@ -20,6 +20,7 @@
         android:paddingRight="1dp"
         android:stretchColumns="*"
         android:weightSum="1"
+        android:layout_marginTop="10dp"
         tools:ignore="Suspicious0dp">
 
         <TableRow
@@ -63,6 +64,7 @@
 
 
     </TableLayout>
+
     <ScrollView
         android:id="@+id/scid"
         android:layout_width="match_parent"

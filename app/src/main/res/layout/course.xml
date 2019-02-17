@@ -21,6 +21,7 @@
         android:paddingRight="1dp"
         android:stretchColumns="*"
         android:weightSum="1"
+        android:layout_marginTop="10dp"
         tools:ignore="Suspicious0dp">
 
         <TableRow
@@ -36,51 +37,29 @@
                 android:padding="0dp"
                 android:text="Course Name" />
 
-
             <TextView
                 android:id="@+id/tvfees"
                 style="@style/tabletextview"
-
-
                 android:text="Subject" 
-
-                android:padding="0dp"
-                />
-
+                android:padding="0dp" />
 
             <TextView
                 android:id="@+id/tvduration"
                 style="@style/tabletextview"
-
                 android:text="Section"
-
-                android:padding="0dp"
-                />
-
-
+                android:padding="0dp" />
 
             <TextView
                 android:id="@+id/tvsub"
                 style="@style/tabletextview"
-
-
-                android:text="Fees" 
-
-                android:padding="0dp"
-                 />
-
-
+                android:text="Fees"
+                android:padding="0dp" />
 
             <TextView
                 android:id="@+id/tvsection"
                 style="@style/tabletextview"
-
-
-                android:text="Duration" 
-
-                android:padding="0dp"
-                />
-
+                android:text="Duration"
+                android:padding="0dp" />
 
         </TableRow>
 
