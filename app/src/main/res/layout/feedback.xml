@@ -29,14 +29,13 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2.3">
+            android:layout_weight="2">
             <RatingBar
                 android:id="@+id/ratingBar"
                 style="@android:style/Widget.Holo.RatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:stepSize="1.0"
-
                 android:numStars="5" />
         </LinearLayout>
     </LinearLayout>
