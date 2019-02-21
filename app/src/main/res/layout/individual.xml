@@ -66,6 +66,8 @@
                 android:theme="@style/MyEditText"
                 android:ems="10"
                 android:layout_gravity="center"
+                android:scrollbarStyle="insideInset"
+                android:isScrollContainer="true"
                 android:hint="type..."
                 android:inputType="textMultiLine"/>
         </android.support.design.widget.TextInputLayout>
