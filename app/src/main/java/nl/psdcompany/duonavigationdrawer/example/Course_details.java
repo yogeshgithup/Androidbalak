@@ -47,6 +47,13 @@ public class Course_details extends Fragment {
         getActivity().setTitle("Course Details");
         tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
 
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
         MyTask1 mt1=new MyTask1();
        mt1.execute(url);
     }
@@ -117,9 +124,8 @@ public class Course_details extends Fragment {
                     Integer duration= Integer.parseInt(obj.getString("duration"));
                     String subject=obj.getString("sub_name");
                     String section = obj.getString("sec_name");
-
-
-                    View tableRow = LayoutInflater.from(getContext()).inflate(R.layout.course_item,null,false);
+                    Log.d("118line",LayoutInflater.from(getContext())+"");
+                    View tableRow =LayoutInflater.from(getContext()).inflate(R.layout.course_item,null,false);
                     TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
                     TextView feess= (TextView)tableRow.findViewById(R.id.fees);
                     TextView durationn= (TextView)tableRow.findViewById(R.id.duration);

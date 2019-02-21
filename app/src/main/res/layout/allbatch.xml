@@ -48,6 +48,7 @@
                 android:ems="10"
                 android:layout_gravity="center"
                 android:hint="type..."
+
                 android:isScrollContainer="true"
                 android:scrollbars="vertical"
                 android:overScrollMode="always"
