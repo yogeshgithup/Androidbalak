@@ -20,6 +20,7 @@
         android:paddingRight="1dp"
         android:stretchColumns="*"
         android:weightSum="1"
+        android:layout_marginTop="10dp"
         tools:ignore="Suspicious0dp">
 
         <TableRow
@@ -41,13 +42,13 @@
                 style="@style/tabletextview"
 
                 android:padding="0dp"
-                android:text="Fees" />
+                android:text="Subject" />
 
             <TextView
                 android:id="@+id/tvduration"
                 style="@style/tabletextview"
                 android:padding="0dp"
-                android:text="duration" />
+                android:text="Section" />
 
 
             <TextView
@@ -55,7 +56,7 @@
                 style="@style/tabletextview"
 
                 android:padding="0dp"
-                android:text="Subject" />
+                android:text="Fees" />
 
 
             <TextView
@@ -63,7 +64,7 @@
                 style="@style/tabletextview"
 
                 android:padding="0dp"
-                android:text="Section" />
+                android:text="Duration" />
 
         </TableRow>
 
