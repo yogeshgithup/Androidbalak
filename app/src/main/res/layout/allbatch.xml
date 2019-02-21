@@ -39,6 +39,8 @@
                 android:ems="10"
                 android:layout_gravity="center"
                 android:hint="type..."
+                android:scrollbarStyle="insideInset"
+                android:isScrollContainer="true"
                 android:inputType="textMultiLine"/>
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>

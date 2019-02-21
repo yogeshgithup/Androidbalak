@@ -64,6 +64,8 @@
             android:layout_gravity="center"
             android:padding="5dp"
             app:errorEnabled="true"
+            android:scrollbarStyle="insideInset"
+            android:isScrollContainer="true"
             android:layout_weight="2">
 
             <android.support.design.widget.TextInputEditText
