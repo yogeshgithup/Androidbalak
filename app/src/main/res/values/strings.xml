@@ -14,12 +14,7 @@
         <item>Feedback</item>
     </array>
 
-    <string-array name="items">
-        <item>Ahemdabad</item>
-        <item>Pune</item>
-        <item>Kolkata</item>
-        <item>Baroda</item>
-    </string-array>
+
 
     <array name="menuOptions1">
         <item>Upload Material</item>
