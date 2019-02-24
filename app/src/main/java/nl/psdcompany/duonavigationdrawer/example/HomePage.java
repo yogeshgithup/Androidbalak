@@ -1,5 +1,11 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
+import android.app.Fragment;
+import android.os.Build;
+import android.os.Handler;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -31,6 +37,8 @@ public class HomePage extends AppCompatActivity {
     Button Login;
     EditText uname, pswd;
     TextView fpwd, sign;
+    boolean doubleBackToExitPressedOnce = false;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -40,7 +48,7 @@ public class HomePage extends AppCompatActivity {
         Login = (Button) findViewById(R.id.b1);
         uname = (EditText) findViewById(R.id.uid);
         pswd = (EditText) findViewById(R.id.pwd);
-        fpwd=(TextView)findViewById(R.id.fpwd);
+        fpwd = (TextView) findViewById(R.id.fpwd);
 
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -50,9 +58,9 @@ public class HomePage extends AppCompatActivity {
                 JSONObject obj = new JSONObject();
 
                 try {
-                    obj.put("Username",uname.getText().toString());
+                    obj.put("Username", uname.getText().toString());
 
-                    obj.put("Password",pswd.getText().toString());
+                    obj.put("Password", pswd.getText().toString());
 
                     ab.put(obj);
                     Log.d("135", ab.toString());
@@ -70,19 +78,21 @@ public class HomePage extends AppCompatActivity {
 //                startActivity(ii);
 //
 
-                MyTask1 mt1=new MyTask1();
+                MyTask1 mt1 = new MyTask1();
+
 
                 mt1.execute("http://192.168.1.24:8080/GETSWEB/SerLogin",ab.toString());
+
+               
 
             }
         });
 
 
-
         fpwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HomePage.this,Forgotpswd.class);
+                Intent intent = new Intent(HomePage.this, Forgotpswd.class);
                 startActivity(intent);
             }
         });
@@ -90,59 +100,58 @@ public class HomePage extends AppCompatActivity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HomePage.this,Registration.class);
+                Intent intent = new Intent(HomePage.this, Registration.class);
                 startActivity(intent);
             }
         });
 
 
     }
+
     private class MyTask1 extends AsyncTask<String, String, String> {
 
 
         public String doInBackground(String... params) {
             String resp = null;
 
-            String weburl=params[0];
+            String weburl = params[0];
 
-            StringBuffer output=new StringBuffer();
+            StringBuffer output = new StringBuffer();
             try {
                 InputStream stream = null;
                 // start of code of connnetion
-                weburl=weburl+"?data="+params[1];
-                Log.d("url",weburl);
+                weburl = weburl + "?data=" + params[1];
+                Log.d("url", weburl);
                 URL url = new URL(weburl);
                 URLConnection connection = url.openConnection();
 
                 String sd = "abcbjj";
-                Log.d("error41",sd);
+                Log.d("error41", sd);
                 HttpURLConnection httpConnection = (HttpURLConnection) connection;
                 String sm = "bnhjbc";
-                Log.d("error42",sm);
+                Log.d("error42", sm);
                 httpConnection.setRequestMethod("GET");
                 String sg = "abcggh";
-                Log.d("error43",sg);
+                Log.d("error43", sg);
                 httpConnection.connect();
                 String sk = "abcmj";
-                Log.d("error44",sk);
+                Log.d("error44", sk);
                 stream = httpConnection.getInputStream();
                 String sl = "abckkii";
-                Log.d("error46",sl);
+                Log.d("error46", sl);
                 BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
                 String s = "abc";
-                Log.d("error45",s);
+                Log.d("error45", s);
                 while ((s = buffer.readLine()) != null)
                     output.append(s);
-            }
-            catch (Exception e) {
-                Log.e("error62",e.getMessage());
+            } catch (Exception e) {
+                Log.e("error62", e.getMessage());
 
             }
             return output.toString();
 
 
         }
-
 
 
         protected void onPostExecute(String output) {
@@ -155,20 +164,20 @@ public class HomePage extends AppCompatActivity {
             if (output.equals("A1")) {
                 Toast.makeText(HomePage.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HomePage.this, MainAdmin.class);
-                intent.putExtra("Username",uname.getText().toString());
+                intent.putExtra("Username", uname.getText().toString());
                 startActivity(intent);
 
 
             } else if (output.equals("F")) {
                 Toast.makeText(HomePage.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HomePage.this, MainStaff.class);
-                intent.putExtra("Username",uname.getText().toString());
+                intent.putExtra("Username", uname.getText().toString());
                 startActivity(intent);
 
             } else if (output.equals("S")) {
                 Toast.makeText(HomePage.this, "LogIn Successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HomePage.this, MainActivity.class);
-                intent.putExtra("Username",uname.getText().toString());
+                intent.putExtra("Username", uname.getText().toString());
                 startActivity(intent);
 
 
@@ -215,5 +224,27 @@ public class HomePage extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            finishAffinity();
+            System.exit(0);
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Press again to exit", Toast.LENGTH_SHORT).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+
+            }
+        }, 2000);  // Change time interval here if you want
+
+
     }
 }
