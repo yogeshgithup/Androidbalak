@@ -72,8 +72,10 @@ public class Gallery2 extends PagerAdapter {
             Log.d("image", imgpath);
             // imageView.setImageBitmap(BitmapFactory.decodeFile(imgpath));
            // ccc
+            Picasso.with(context).load(imgpath).into(imageView);
+           // Picasso.with(context).load("https://www.dropbox.com/s/uyri2ytom0pe294/_20170205_181821_1486298853756.jpg?dl=1").into(imageView);
 
-            Picasso.with(context).load("https://dl.dropboxusercontent.com/s/woart55urbw792u/image1.jpg").into(imageView);
+        //    https://www.dropbox.com/s/p7regm4rwd5oy63/IMG_20161205_083159.jpg?dl=1
 
             //  imageView.setImageResource(images[position]);
             Log.d("yhbujn", "---" + imageView);
