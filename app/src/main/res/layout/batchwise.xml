@@ -127,6 +127,7 @@
                 android:overScrollMode="always"
                 android:scrollbarStyle="insideInset"
                 android:hint="type..."
+
                 android:inputType="textMultiLine"/>
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
