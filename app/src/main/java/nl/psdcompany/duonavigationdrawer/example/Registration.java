@@ -127,7 +127,7 @@ public class Registration extends AppCompatActivity {
 //
 //                    }*/
 //
-          obj.put("dob", et4.getText());
+                   obj.put("dob", et4.getText());
                     obj.put("contact_no", et5.getText());
                  obj.put("email", et6.getText());
                  obj.put("ReEnterEmail", et7.getText());
@@ -175,7 +175,7 @@ public class Registration extends AppCompatActivity {
 
                 MyTask1 mt1=new MyTask1();
 
-                mt1.execute("http://192.168.1.72:8080/GETSWEB/SerPersonAndroid",ab.toString());
+                mt1.execute("http://192.168.1.17:8084/GETSWEB/SerPersonAndroid",ab.toString());
 
 
             }
