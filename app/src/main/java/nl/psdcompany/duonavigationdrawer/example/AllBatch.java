@@ -39,6 +39,7 @@ public class AllBatch extends AppCompatActivity {
         sendd = (Button) findViewById(R.id.sendd);
 
 
+
         sendd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +59,10 @@ public class AllBatch extends AppCompatActivity {
                 }
 
                 MyTask1 mt1=new MyTask1();
+
                 mt1.execute("http://192.168.1.72:8080/GETSWEB/SerAllBatchAndroid",ab.toString());
+
+                
 
             }
         });
@@ -122,6 +126,4 @@ public class AllBatch extends AppCompatActivity {
 
     }
 }
-
-
 
