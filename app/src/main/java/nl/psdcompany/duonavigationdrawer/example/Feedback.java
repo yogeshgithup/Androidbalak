@@ -30,10 +30,14 @@ import java.net.URL;
 import java.net.URLConnection;
 
 
+
 public class Feedback extends Fragment {
     RatingBar rtn;
     Button buttonr;
     EditText edtf1;
+
+    String n;
+    Intent intent;
 
     @Nullable
     @Override
@@ -41,6 +45,7 @@ public class Feedback extends Fragment {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
         return inflater.inflate(R.layout.feedback, container, false);
+
 
     }
 
@@ -53,6 +58,9 @@ public class Feedback extends Fragment {
         getActivity().setTitle("Feedback");
 
 
+        intent = getActivity().getIntent();
+
+        n = intent.getStringExtra("Username");
         rtn = (RatingBar) view.findViewById(R.id.ratingBar);
 
         buttonr = (Button) view.findViewById(R.id.buttonr);
@@ -60,17 +68,21 @@ public class Feedback extends Fragment {
 
         buttonr.setOnClickListener(new View.OnClickListener() {
             @Override
+
+
             public void onClick(View v) {
 
                 JSONArray ab = new JSONArray();
                 JSONObject obj = new JSONObject();
 
                 String rating = String.valueOf(rtn.getRating());
-              Toast.makeText(Feedback.super.getContext(), rating, Toast.LENGTH_LONG).show();
+                Toast.makeText(Feedback.super.getContext(), rating, Toast.LENGTH_LONG).show();
 
                 try {
-                    obj.put("Comment", edtf1.getText().toString());
-                    obj.put("Rating",String.valueOf(rtn.getRating()));
+
+                    obj.put("Username", n);
+                    obj.put("f_comment", edtf1.getText().toString());
+                    obj.put("f_rating", String.valueOf(rtn.getRating()));
                     ab.put(obj);
                     Log.d("135", ab.toString());
 
@@ -79,13 +91,14 @@ public class Feedback extends Fragment {
                     e.printStackTrace();
                 }
                 MyTask1 mt1 = new MyTask1();
-                mt1.execute("http://192.168.1.72:8080/GETSWEB/SerAllBatchAndroid", ab.toString());
+                mt1.execute("http://192.168.1.72:8080/GETSWEB/SerAndroidFeedback", ab.toString());
 
             }
         });
 
 
     }
+
     @Override
     public void onResume() {
 
@@ -108,7 +121,7 @@ public class Feedback extends Fragment {
                     builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent=new Intent(getActivity(),HomePage.class);
+                            Intent intent = new Intent(getActivity(), HomePage.class);
                             startActivity(intent);
                         }
                     });
