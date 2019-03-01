@@ -96,7 +96,7 @@ public class Registration extends AppCompatActivity {
         pro=(Button)findViewById(R.id.pro);
 
         MyTask2 mt2 = new MyTask2();
-        mt2.execute("http://192.168.1.70:8080/GETSWEB/SerCourseAndroid");
+        mt2.execute("http://192.168.1.72:8080/GETSWEB/SerCourseAndroid");
 
 
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -202,7 +202,7 @@ public class Registration extends AppCompatActivity {
 
                 MyTask1 mt1=new MyTask1();
 
-                mt1.execute("http://192.168.1.17:8084/GETSWEB/SerPersonAndroid",ab.toString());
+                mt1.execute("http://192.168.1.72:8080/GETSWEB/SerPersonAndroid",ab.toString());
 
 
 

@@ -184,6 +184,7 @@ public class Fee_status extends  Fragment {
                     TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
                     TextView feess= (TextView)tableRow.findViewById(R.id.fees);
                     TextView fpaid= (TextView)tableRow.findViewById(R.id.fpaid);
+                    TextView fremain=(TextView)tableRow.findViewById(R.id.fremain);
 
 
                     Log.d("178line",jt.toString());
@@ -191,6 +192,16 @@ public class Fee_status extends  Fragment {
                     coursee.setText(course);
                     feess.setText(String.format("%d",fees));
                     fpaid.setText(String.format("%d",fees_paid));
+
+                    Integer remain= Integer.parseInt(obj.getString("c_fees")) - Integer.parseInt(obj.getString("fees_paid"));
+                    if(remain > 0)
+                    {
+                        fremain.setText(String.format("%d",remain));
+                    }
+                    else
+                    {
+                        fremain.setText("fees paid");
+                    }
 
 
                     tableLayout.addView(tableRow);
