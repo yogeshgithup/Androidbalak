@@ -23,7 +23,8 @@
         tools:ignore="GoogleAppIndexingWarning"
         android:theme="@style/AppTheme">
         <activity android:name=".HomePage"
-                  android:label="GetS">
+                  android:label="GetS"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -32,52 +33,87 @@
 
         <activity android:name=".MainActivity"
             android:label="mainactivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".MainAdmin"
             android:label="mainactivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".MainStaff"
             android:label="mainactivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
 
         <activity android:name=".Forgotpswd"
-            android:label="Forgot Password"/>
+            android:label="Forgot Password"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".Registration"
-            android:label="Registration"/>
+            android:label="Registration"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".AllBatch"
-            android:label="all batch"/>
+            android:label="all batch"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".BatchWise"
-            android:label="batch wise"/>
+            android:label="batch wise"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".Individual"
-            android:label="individual"/>
+            android:label="individual"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity
             android:name=".AdminEmail"
-            android:label="Profile" />
+            android:label="Profile"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity
             android:name=".Gallery"
             android:largeHeap="true"
-            android:label="Gallery" />
+            android:label="Gallery"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
 
         <activity
             android:name=".StudentEmail"
-            android:label="Email" />
+            android:label="Email"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity
             android:name=".StaffEmail"
-            android:label="Profile" />
+            android:label="Profile"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity
             android:name=".ChangePswd"
-            android:label="Change Password" />
+            android:label="Change Password"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity
             android:name=".AboutUs"
-            android:label="About Us" />
+            android:label="About Us"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
 
         <activity
             android:name=".ContactUs"
-            android:label="Contact Us" />
+            android:label="Contact Us"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".Course"
-            android:label="course details"/>
+            android:label="course details"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
         <activity android:name=".Main2Activity"
-            android:label="Upload"/>
+            android:label="Upload"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
 
     </application>
 </manifest>
