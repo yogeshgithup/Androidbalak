@@ -1,13 +1,13 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
-public class person {
+public class pojo_course {
     String c_name,sub_name,sec_name;
     Integer fees,duration;
 
-    public person() {
+    public pojo_course() {
     }
 
-    public person(String c_name, String sub_name, String sec_name, Integer fees, Integer duration) {
+    public pojo_course(String c_name, String sub_name, String sec_name, Integer fees, Integer duration) {
         this.c_name = c_name;
         this.sub_name = sub_name;
         this.sec_name = sec_name;

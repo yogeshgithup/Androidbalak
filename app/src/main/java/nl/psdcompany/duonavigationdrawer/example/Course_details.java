@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,8 +30,8 @@ import java.util.ArrayList;
 
 public class Course_details extends Fragment {
 
-    private ArrayList<person> datalist;
-    String url="http://192.168.43.229:8080/GETSWEB/SerCourseAndroid";
+    private ArrayList<pojo_course> datalist;
+    String url="http://192.168.1.72:8080/GETSWEB/SerCourseAndroid";
     TableLayout tableLayout;
     @Nullable
     @Override
@@ -53,6 +51,17 @@ public class Course_details extends Fragment {
 
 
     }
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setRetainInstance(true);
+
+        if(savedInstanceState==null) {
+            MyTask1 mt1 = new MyTask1();
+            mt1.execute(url);
+        }
+    }
+
 
     @Override
     public void onResume() {
@@ -93,9 +102,6 @@ public class Course_details extends Fragment {
                     return false;
                 }
             });
-
-        MyTask1 mt1=new MyTask1();
-       mt1.execute(url);
     }
 
 
@@ -150,7 +156,7 @@ public class Course_details extends Fragment {
         }
 
         protected void onPostExecute(String s) {
-            Log.d("111line",s);
+            Log.d("153line",s);
             JSONTokener jt=new JSONTokener(s);
 
             try {
@@ -164,7 +170,7 @@ public class Course_details extends Fragment {
                     Integer duration= Integer.parseInt(obj.getString("duration"));
                     String subject=obj.getString("sub_name");
                     String section = obj.getString("sec_name");
-                    Log.d("118line",LayoutInflater.from(getContext())+"");
+                    Log.d("167line",LayoutInflater.from(getContext())+"");
                     View tableRow =LayoutInflater.from(getContext()).inflate(R.layout.course_item,null,false);
                     TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
                     TextView feess= (TextView)tableRow.findViewById(R.id.fees);

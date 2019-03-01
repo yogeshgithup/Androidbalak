@@ -38,21 +38,21 @@
 
 
             <TextView
-                android:id="@+id/tvfees"
+                android:id="@+id/tvsub"
                 style="@style/tabletextview"
 
                 android:padding="0dp"
                 android:text="Subject" />
 
             <TextView
-                android:id="@+id/tvduration"
+                android:id="@+id/tvsec"
                 style="@style/tabletextview"
                 android:padding="0dp"
                 android:text="Section" />
 
 
             <TextView
-                android:id="@+id/tvsub"
+                android:id="@+id/tvfees"
                 style="@style/tabletextview"
 
                 android:padding="0dp"
@@ -60,7 +60,7 @@
 
 
             <TextView
-                android:id="@+id/tvsection"
+                android:id="@+id/tvduration"
                 style="@style/tabletextview"
 
                 android:padding="0dp"

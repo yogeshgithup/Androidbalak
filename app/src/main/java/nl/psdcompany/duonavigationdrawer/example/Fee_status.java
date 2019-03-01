@@ -1,35 +1,47 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
+import android.widget.TextView;
 
-import static android.view.KeyEvent.ACTION_DOWN;
-import static android.view.KeyEvent.ACTION_UP;
-import static android.view.KeyEvent.CREATOR;
-import static android.view.KeyEvent.changeAction;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
 
 public class Fee_status extends  Fragment {
+
+    private ArrayList<pojo_fees> datalist;
+    String url="http://192.168.1.72:8080/GETSWEB/SerFeesStatusAndroid";
+    TableLayout tableLayout;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        return inflater.inflate(R.layout.fee_status, container, false);
+         return inflater.inflate(R.layout.fee_status, container, false);
+
     }
 
 
@@ -38,10 +50,20 @@ public class Fee_status extends  Fragment {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Fees Status");
-        //   onKeyDown(ACTION_DOWN,KeyEvent.ACTION_DOWN);
-    }
+        tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
 
-    public Fee_status() {
+
+
+    }
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setRetainInstance(true);
+
+        if(savedInstanceState==null) {
+            MyTask1 mt1 = new MyTask1();
+            mt1.execute(url);
+        }
     }
 
     @Override
@@ -84,5 +106,106 @@ public class Fee_status extends  Fragment {
                 return false;
             }
         });
+
+
+//            MyTask1 mt1 = new MyTask1();
+//            mt1.execute(url);
+
+
+    }
+
+
+
+
+    class MyTask1 extends AsyncTask<String, String, String> {
+
+
+        public String doInBackground(String... params) {
+            String resp = null;
+
+            String weburl=params[0];
+
+            StringBuffer output=new StringBuffer();
+            try {
+                InputStream stream = null;
+                // start of code of connnetion
+
+                Log.d("url123",weburl);
+                URL url = new URL(weburl);
+                URLConnection connection = url.openConnection();
+
+                String sd = "abcbjj";
+                Log.d("error128",sd);
+                HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                String sm = "bnhjbc";
+                Log.d("error131",sm);
+                httpConnection.setRequestMethod("GET");
+                String sg = "abcggh";
+                Log.d("error134",sg);
+                httpConnection.connect();
+                String sk = "abcmj";
+                Log.d("error137",sk);
+                stream = httpConnection.getInputStream();
+                String sl = "abckkii";
+                Log.d("error140",sl);
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "abc";
+                Log.d("error143",s);
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+            } catch (Exception e) {
+                Log.e("error147",e.getMessage());
+
+            }
+            return output.toString();
+
+
+        }
+
+
+        protected void onPreExecute(){
+
+        }
+
+        protected void onPostExecute(String s) {
+            Log.d("158line",s);
+            JSONTokener jt=new JSONTokener(s);
+
+            try {
+                JSONArray ja=new JSONArray(s);
+                for(int i=0;i<ja.length();i++) {
+
+                    JSONObject obj = (JSONObject) ja.getJSONObject(i);
+
+                    String course = obj.getString("c_name");
+                    Integer fees=Integer.parseInt(obj.getString("c_fees"));
+                    Integer fees_paid= Integer.parseInt(obj.getString("fees_paid"));
+
+                    Log.d("171line",LayoutInflater.from(getContext())+"");
+                    View tableRow =LayoutInflater.from(getContext()).inflate(R.layout.fees_item,null,false);
+                    TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
+                    TextView feess= (TextView)tableRow.findViewById(R.id.fees);
+                    TextView fpaid= (TextView)tableRow.findViewById(R.id.fpaid);
+
+
+                    Log.d("178line",jt.toString());
+
+                    coursee.setText(course);
+                    feess.setText(String.format("%d",fees));
+                    fpaid.setText(String.format("%d",fees_paid));
+
+
+                    tableLayout.addView(tableRow);
+
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+                String we="qwe";
+                Log.d("qwe",e.getMessage());
+            }
+        }
+
+
     }
 }
