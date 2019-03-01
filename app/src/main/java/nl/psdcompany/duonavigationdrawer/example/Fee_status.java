@@ -115,8 +115,6 @@ public class Fee_status extends  Fragment {
     }
 
 
-
-
     class MyTask1 extends AsyncTask<String, String, String> {
 
 

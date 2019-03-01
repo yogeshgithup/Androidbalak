@@ -96,7 +96,7 @@ public class Registration extends AppCompatActivity {
         pro=(Button)findViewById(R.id.pro);
 
         MyTask2 mt2 = new MyTask2();
-        mt2.execute("http://192.168.1.24:8080/GETSWEB/SerCourseAndroid");
+        mt2.execute("http://192.168.1.70:8080/GETSWEB/SerCourseAndroid");
 
 
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
