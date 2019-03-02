@@ -34,7 +34,8 @@ public class Fee_status extends  Fragment {
     String url="http://192.168.1.72:8080/GETSWEB/SerFeesStatusAndroid";
     TableLayout tableLayout;
 
-
+    String n;
+    Intent intent;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -53,6 +54,21 @@ public class Fee_status extends  Fragment {
         tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
 
 
+        intent = getActivity().getIntent();
+
+        n = intent.getStringExtra("Username");
+
+        JSONArray ab = new JSONArray();
+        JSONObject obj = new JSONObject();
+        try
+        {
+            obj.put("Username",n);
+            ab.put(obj);
+            Log.d("135", ab.toString());
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
     @Override
@@ -127,7 +143,7 @@ public class Fee_status extends  Fragment {
             try {
                 InputStream stream = null;
                 // start of code of connnetion
-
+                weburl = weburl + "?data=" + params[1];
                 Log.d("url123",weburl);
                 URL url = new URL(weburl);
                 URLConnection connection = url.openConnection();
