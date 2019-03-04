@@ -36,6 +36,10 @@ public class Fee_status extends  Fragment {
 
     String n;
     Intent intent;
+
+    JSONArray ab = new JSONArray();
+    JSONObject obj = new JSONObject();
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,8 +62,7 @@ public class Fee_status extends  Fragment {
 
         n = intent.getStringExtra("Username");
 
-        JSONArray ab = new JSONArray();
-        JSONObject obj = new JSONObject();
+
         try
         {
             obj.put("Username",n);
@@ -78,7 +81,7 @@ public class Fee_status extends  Fragment {
 
         if(savedInstanceState==null) {
             MyTask1 mt1 = new MyTask1();
-            mt1.execute(url);
+            mt1.execute(url,ab.toString());
         }
     }
 
