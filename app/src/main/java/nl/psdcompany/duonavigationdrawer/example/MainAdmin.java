@@ -1,15 +1,19 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -165,6 +169,30 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
             mDuoDrawerLayout = (DuoDrawerLayout) findViewById(R.id.drawer);
             mDuoMenuView = (DuoMenuView) mDuoDrawerLayout.getMenuView();
             mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        }
+    }
+
+
+    public void MyClick (View imageButton) {
+
+        Toast.makeText(MainAdmin.this,"clicked",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("*/*");
+        startActivityForResult(intent, 7);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+
+        switch (requestCode) {
+            case 7:
+                if (resultCode == RESULT_OK) {
+                    String PathHolder = data.getData().getPath();
+                    Toast.makeText(MainAdmin.this, PathHolder, Toast.LENGTH_LONG).show();
+
+                }
+                break;
         }
     }
 }

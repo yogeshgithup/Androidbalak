@@ -8,7 +8,6 @@
     android:layout_margin="5dp"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".Registration"
     android:id="@+id/matm">
 
 
@@ -54,6 +53,14 @@
 
                 android:text="Title"
                />
+
+            <TextView
+                android:id="@+id/tvtype"
+                style="@style/tabletextview"
+                android:padding="0dp"
+
+                android:text="Material Type"
+                />
 
             <TextView
                 android:id="@+id/tvupload"
@@ -146,10 +153,8 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:visibility="invisible" />
 
-
-
-                <ImageButton
-                android:id="@+id/imageButton"
+                <TextView
+                    android:id="@+id/type"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginLeft="1dp"
@@ -161,7 +166,24 @@
                     android:paddingTop="5dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="5dp"
-                    android:src="@drawable/file_upload"/>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                android:id="@+id/imageButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+
+                    android:src="@drawable/file_upload"
+                     />
 
 
             </TableRow>

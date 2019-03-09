@@ -2,8 +2,10 @@ package nl.psdcompany.duonavigationdrawer.example;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -12,8 +14,11 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +26,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -28,17 +34,36 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
-public class Material_upload extends Fragment{
+import static android.app.Activity.RESULT_OK;
+
+public class Material_upload extends Fragment {
 
         private ArrayList<pojo_course> datalist;
-        String url="http://192.168.1.72:8080/GETSWEB/SerCourseAndroid";
+        String url="http://192.168.1.42:8080/GETSWEB/SerCourseAndroid";
         TableLayout tableLayout;
+        ImageButton imageButton;
+
+
+    public Material_upload() {
+    }
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        return inflater.inflate(R.layout.material_upload, container, false);
+        View v = inflater.inflate(R.layout.material_upload, container, false);
+        imageButton = (ImageButton) v.findViewById(R.id.imageButton);
+        Log.d("imagebutton", String.valueOf(imageButton));
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Log.d("abcd","abcd");
+            }
+        });
+
+        return v;
     }
+
 
 
     @Override
@@ -46,12 +71,15 @@ public class Material_upload extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Material Upload");
+        tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
+
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
+
 
         if(savedInstanceState==null) {
             MyTask1 mt1 = new MyTask1();
@@ -100,6 +128,7 @@ public class Material_upload extends Fragment{
             }
         });
     }
+
 
     class MyTask1 extends AsyncTask<String, String, String> {
 
@@ -166,7 +195,7 @@ public class Material_upload extends Fragment{
                     String subject=obj.getString("sub_name");
 
                     Log.d("167line",LayoutInflater.from(getContext())+"");
-                    View tableRow =LayoutInflater.from(getContext()).inflate(R.layout.course_item,null,false);
+                    View tableRow =LayoutInflater.from(getContext()).inflate(R.layout.material_item,null,false);
                     TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
                     TextView subjectt= (TextView)tableRow.findViewById(R.id.subject);
 

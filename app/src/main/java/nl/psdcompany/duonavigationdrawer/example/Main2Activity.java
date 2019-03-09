@@ -140,7 +140,7 @@ public class Main2Activity extends AppCompatActivity {
         // create asyn obj
         MyTask1 mt1 = new MyTask1();
 
-        mt1.execute("http://192.168.1.72:8080/GETSWEB/SerPersonAndroid",path);
+        mt1.execute("http://192.168.1.42:8080/GETSWEB/SerPersonAndroid",path);
 
 
 
