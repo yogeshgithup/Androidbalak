@@ -105,25 +105,25 @@ public class Gallery2 extends PagerAdapter {
         return null;
     }
 
-//    public class ImageLoader{
-//
-//        public ImageLoader(ImageView imageView, final ProgressBar progressBar, String imagePath){
-//
-//            Glide.with(context).load(imagePath).listener(new RequestListener<String, GlideDrawable>() {
-//
-//                @Override
-//                public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-//                    //handle error
-//                    return false;
-//                }
-//
-//                @Override
-//                public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-//                    progressBar.setVisibility(View.GONE);
-//                    return false;
-//                }
-//            }).into(imageView);
-//        }
-//    }
+    public class ImageLoader{
+
+        public ImageLoader(ImageView imageView, final ProgressBar progressBar, String imagePath){
+
+            Glide.with(context).load(imagePath).listener(new RequestListener<String, GlideDrawable>() {
+
+                @Override
+                public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                    //handle error
+                    return false;
+                }
+
+                @Override
+                public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                    progressBar.setVisibility(View.GONE);
+                    return false;
+                }
+            }).into(imageView);
+        }
+    }
 }
 

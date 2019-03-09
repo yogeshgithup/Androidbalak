@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class Course extends AppCompatActivity {
     private ArrayList<pojo_course> datalist;
-    String url="http://192.168.1.72:8080/GETSWEB/SerCourseAndroid";
+    String url="http://192.168.1.42:8080/GETSWEB/SerCourseAndroid";
     TableLayout tableLayout;
 
     protected void onCreate(Bundle savedInstanceState) {

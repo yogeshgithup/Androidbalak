@@ -1,30 +1,23 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
-import android.app.Fragment;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -80,7 +73,7 @@ public class HomePage extends AppCompatActivity {
 
                 MyTask1 mt1 = new MyTask1();
 
-                mt1.execute("http/192.168.1.72:8080/GETSWEB/SerLogin", ab.toString());
+                mt1.execute("http://192.168.1.42:8080/GETSWEB/SerLogin", ab.toString());
 
 
             }
