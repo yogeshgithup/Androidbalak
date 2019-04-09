@@ -43,13 +43,13 @@ public class Forgotpswd extends AppCompatActivity {
                 JSONObject obj = new JSONObject();
 
                 try{
-                    obj.put("Email",etfp1.getText().toString());
+                    obj.put("email",etfp1.getText().toString());
 
                     ab.put(obj);
                     Log.d("135", ab.toString());
 
                     MyTask1 mt1=new MyTask1();
-                    mt1.execute("http://192.168.1.42:8080/GETSWEB/SerForgotPassword",ab.toString());
+                    mt1.execute("http://192.168.1.27:8080/GETSWEB/SerForgotPassword",ab.toString());
 
 
                 } catch (JSONException e) {

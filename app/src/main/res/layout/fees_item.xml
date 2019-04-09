@@ -19,7 +19,7 @@
             <TextView
                 android:id="@+id/course"
                 android:layout_width="0dip"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
@@ -35,7 +35,7 @@
             <TextView
                 android:id="@+id/fees"
                 android:layout_width="0dip"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
@@ -51,7 +51,7 @@
             <TextView
                 android:id="@+id/fpaid"
                 android:layout_width="0dip"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
@@ -67,7 +67,7 @@
             <TextView
                 android:id="@+id/fremain"
                 android:layout_width="0dip"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
