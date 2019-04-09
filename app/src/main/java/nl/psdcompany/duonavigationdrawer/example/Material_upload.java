@@ -39,7 +39,7 @@ import static android.app.Activity.RESULT_OK;
 public class Material_upload extends Fragment {
 
         private ArrayList<pojo_course> datalist;
-        String url="http://192.168.1.42:8080/GETSWEB/SerCourseAndroid";
+        String url="http://192.168.1.27:8080/GETSWEB/SerCourseAndroid";
         TableLayout tableLayout;
         ImageButton imageButton;
 
