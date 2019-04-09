@@ -2,7 +2,6 @@ package nl.psdcompany.duonavigationdrawer.example;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -27,6 +26,7 @@ import org.json.JSONTokener;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -52,14 +52,6 @@ public class Material_upload extends Fragment {
         //change R.layout.yourlayoutfilename for each of your fragments
         View v = inflater.inflate(R.layout.material_upload, container, false);
         imageButton = (ImageButton) v.findViewById(R.id.imageButton);
-        Log.d("imagebutton", String.valueOf(imageButton));
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Log.d("abcd","abcd");
-            }
-        });
 
         return v;
     }
@@ -85,6 +77,7 @@ public class Material_upload extends Fragment {
             MyTask1 mt1 = new MyTask1();
             mt1.execute(url);
         }
+
     }
 
     @Override
@@ -150,7 +143,7 @@ public class Material_upload extends Fragment {
                 String sd = "abcbjj";
                 Log.d("error41",sd);
                 HttpURLConnection httpConnection = (HttpURLConnection) connection;
-                String sm = "bnhjbc";
+                String sm = "ubnhjbc";
                 Log.d("error42",sm);
                 httpConnection.setRequestMethod("GET");
                 String sg = "abcggh";
@@ -172,18 +165,15 @@ public class Material_upload extends Fragment {
             }
             return output.toString();
 
-
         }
 
 
         protected void onPreExecute(){
-
         }
 
         protected void onPostExecute(String s) {
             Log.d("153line",s);
             JSONTokener jt=new JSONTokener(s);
-
             try {
                 JSONArray ja=new JSONArray(s);
                 for(int i=0;i<ja.length();i++) {

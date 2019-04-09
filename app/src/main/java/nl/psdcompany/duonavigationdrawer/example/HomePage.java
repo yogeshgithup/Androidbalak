@@ -1,8 +1,13 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -13,12 +18,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
+
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -30,7 +44,9 @@ public class HomePage extends AppCompatActivity {
     Button Login;
     EditText uname, pswd;
     TextView fpwd, sign;
+    ImageView imageView;
     boolean doubleBackToExitPressedOnce = false;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +58,7 @@ public class HomePage extends AppCompatActivity {
         uname = (EditText) findViewById(R.id.uid);
         pswd = (EditText) findViewById(R.id.pwd);
         fpwd = (TextView) findViewById(R.id.fpwd);
+        imageView = (ImageView)findViewById(R.id.imageView);
 
 
         Login.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +113,9 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        MyTask2 mt2=new MyTask2();
+        mt2.execute("http://192.168.1.27:8080/GETSWEB/SerAndroidLayout");
+
 
     }
 
@@ -115,7 +135,6 @@ public class HomePage extends AppCompatActivity {
                 Log.d("url", weburl);
                 URL url = new URL(weburl);
                 URLConnection connection = url.openConnection();
-
                 String sd = "abcbjj";
                 Log.d("error41", sd);
                 HttpURLConnection httpConnection = (HttpURLConnection) connection;
@@ -140,13 +159,11 @@ public class HomePage extends AppCompatActivity {
 
             }
             return output.toString();
-
-
         }
 
 
         protected void onPostExecute(String output) {
-            Toast.makeText(HomePage.this, output, Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(HomePage.this, output, Toast.LENGTH_SHORT).show();
             String n = "get is called";
             Log.d("149", n);
 
@@ -171,15 +188,80 @@ public class HomePage extends AppCompatActivity {
                 intent.putExtra("Username", uname.getText().toString());
                 startActivity(intent);
 
-
             } else {
                 Toast.makeText(HomePage.this, "LogIn Failed", Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+
+    class MyTask2 extends AsyncTask<String, String, String> {
 
 
+        public String doInBackground(String... params) {
+            String resp = null;
+
+            String weburl=params[0];
+
+            StringBuffer output=new StringBuffer();
+            try {
+                InputStream stream = null;
+                // start of code of connnetion
+
+                Log.d("url",weburl);
+                URL url = new URL(weburl);
+                URLConnection connection = url.openConnection();
+
+                String sd = "abcbjj";
+                Log.d("error41",sd);
+                HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                String sm = "bnhjbc";
+                Log.d("error42",sm);
+                httpConnection.setRequestMethod("GET");
+                String sg = "abcggh";
+                Log.d("error43",sg);
+                httpConnection.connect();
+                String sk = "abcmj";
+                Log.d("error44",sk);
+                stream = httpConnection.getInputStream();
+                String sl = "abckkii";
+                Log.d("error46",sl);
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "abc";
+                Log.d("error45",s);
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+            } catch (Exception e) {
+                Log.e("error62",e.getMessage());
+            }
+            return output.toString();
         }
 
 
+        protected void onPreExecute(){
+
+        }
+
+        protected void onPostExecute(String s) {
+            Log.d("111line",s);
+            JSONTokener jt=new JSONTokener(s);
+
+            try {
+                JSONArray ja=new JSONArray(s);
+                JSONObject obj = ja.getJSONObject(0);
+                String filepath = obj.getString("filepath");
+                Log.d("image", filepath);
+                Picasso.with(getApplicationContext()).load(filepath).into(imageView);
+
+                Log.d("yhbujn", "---" + imageView);
+
+                Log.d("ery","---"+ja);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+                String we="qwe";
+                Log.d("qwe",e.getMessage());
+            }
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
