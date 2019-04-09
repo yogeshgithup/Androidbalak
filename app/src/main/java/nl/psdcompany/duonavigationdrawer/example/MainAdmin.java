@@ -1,21 +1,36 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout;
 import nl.psdcompany.duonavigationdrawer.views.DuoMenuView;
@@ -24,6 +39,7 @@ import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle;
 import static nl.psdcompany.duonavigationdrawer.example.R.array.menuOptions1;
 
 public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuClickListener {
+    private static final int REQUEST_CODE_DOC = 1;
     private MenuAdapter mMenuAdapter;
     private ViewHolder mViewHolder;
 
@@ -99,7 +115,7 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
         if (addToBackStack) {
             transaction.addToBackStack(null);
         }
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,(android.support.v4.app.Fragment) fragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, (android.support.v4.app.Fragment) fragment).commit();
 
     }
 
@@ -115,10 +131,11 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
 
         switch (position) {
             case 0:
-                goToFragment(new Material_upload(),false);
+                goToFragment(new Material_upload(), false);
+
                 break;
             case 1:
-                goToFragment(new Send_notification(),false);
+                goToFragment(new Send_notification(), false);
                 break;
             default:
                 goToFragment(new Material_upload(), false);
@@ -128,6 +145,7 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
         }
         mViewHolder.mDuoDrawerLayout.closeDrawer();
     }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menus, menu);
@@ -143,15 +161,15 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_email) {
-            Intent i=getIntent();
-            String u=i.getStringExtra("Username");
+            Intent i = getIntent();
+            String u = i.getStringExtra("Username");
 
-            i=new Intent(MainAdmin.this,AdminEmail.class);
-            i.putExtra("Username",u);
+            i = new Intent(MainAdmin.this, AdminEmail.class);
+            i.putExtra("Username", u);
             startActivity(i);
 
             return true;
-            }
+        }
         if (id == R.id.action_changepswd) {
             startActivity(new Intent(this, ChangePswd.class));
             return true;
@@ -179,6 +197,8 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
         startActivityForResult(intent, 7);
+
+
     }
 
     @Override
@@ -188,12 +208,93 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
         switch (requestCode) {
             case 7:
                 if (resultCode == RESULT_OK) {
-                    String PathHolder = data.getData().getPath();
-                    Toast.makeText(MainAdmin.this, PathHolder, Toast.LENGTH_LONG).show();
+                    String path = data.getData().getPath();
 
+
+                    File uploadFile1= new File(this.getFilesDir()+path);
+                 //   Log.d("198line",path+"  "+uploadFile1.exists()+"");
+
+                       Toast.makeText(MainAdmin.this, path, Toast.LENGTH_LONG).show();
+
+                    MyTask1 mt1 = new MyTask1();
+                    mt1.execute("http://192.168.1.27:8080/GETSWEB/AndroidDownload",path);
                 }
                 break;
         }
+    }
+
+    private class MyTask1 extends AsyncTask<String, String, String> {
+
+
+
+        public String doInBackground(String... params) {
+            String resp = "";
+
+            String weburl=params[0];
+            String path = params[1];
+            String charset = "UTF-8";
+
+//                File uploadFile1= new File(path);
+
+                String filename= "123file";
+                File extStore = Environment.getExternalStorageDirectory();
+                // ==> /storage/emulated/0/note.txt
+                String filepath = extStore.getAbsolutePath() + "/" + filename;
+                Log.i("ExternalStorageDemo", "Save to: " +path);
+
+
+
+                try {
+                    int index=path.indexOf(":");
+                    path=path.substring(index+1);
+                    Log.d("249",""+path);
+                    File uploadFile1 = new File(Environment.getExternalStorageDirectory()+"/"+path);
+
+                   /* Log.d("exist",""+uploadFile1.getName());
+                    FileInputStream fin = new FileInputStream(Environment.getExternalStorageDirectory()+"/vidhi.txt");
+                    int l=fin.available();
+                    byte[]filedata=new byte[l];
+                    fin.read(filedata);
+                    String d=new String(filedata);
+                    Log.d("data123",d);
+
+*/
+
+
+
+                    Log.d("218line",uploadFile1.exists()+" "+path);
+                       // Log.d("218line",uploadFile1.exists()+""+);
+               MultipartUtility multipart = new MultipartUtility(weburl, charset);
+               // multipart.addFormField("description", "documents");
+                multipart.addFormField("data", "vidhi");
+
+                multipart.addFilePart("file", uploadFile1);
+                List<String> response = multipart.finish();
+
+               // System.out.println("SERVER REPLIED:"+response.size());
+                 Log.d("270 resp size",response.size()+"");
+
+                for (String line : response) {
+                    resp=resp+response;
+                }
+                } catch (Exception e) {
+                    Log.d("error1",""+e.getMessage());
+                }
+            return resp;
+
+
+        }
+
+
+        protected void onPostExecute(String output) {
+            Toast.makeText(MainAdmin.this, output, Toast.LENGTH_SHORT).show();
+            String n = "get is called";
+            Log.d("149line", n);
+            Log.d("288line", output);
+
+
+        }
+
     }
 }
 
