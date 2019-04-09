@@ -43,7 +43,7 @@ public class Forgotpswd extends AppCompatActivity {
                 JSONObject obj = new JSONObject();
 
                 try{
-                    obj.put("Email",etfp1.getText().toString());
+                    obj.put("email",etfp1.getText().toString());
 
                     ab.put(obj);
                     Log.d("135", ab.toString());

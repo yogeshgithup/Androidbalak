@@ -45,7 +45,9 @@ public class Individual extends AppCompatActivity {
 
 
         MyTask1 mt1 = new MyTask1();
+
         mt1.execute("http://192.168.1.27:8080/GETSWEB/SerSpinnerAndroid");
+
 
 
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
