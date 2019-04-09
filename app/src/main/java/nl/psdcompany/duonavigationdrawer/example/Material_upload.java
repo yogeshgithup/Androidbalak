@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -40,8 +41,10 @@ public class Material_upload extends Fragment {
 
         private ArrayList<pojo_course> datalist;
         String url="http://192.168.1.27:8080/GETSWEB/SerCourseAndroid";
+        String url2="http://192.168.1.27:8080/GETSWEB/AndroidDownload";
         TableLayout tableLayout;
         ImageButton imageButton;
+        EditText title,type;
 
 
     public Material_upload() {
@@ -52,6 +55,8 @@ public class Material_upload extends Fragment {
         //change R.layout.yourlayoutfilename for each of your fragments
         View v = inflater.inflate(R.layout.material_upload, container, false);
         imageButton = (ImageButton) v.findViewById(R.id.imageButton);
+        title =(EditText)v.findViewById(R.id.title);
+        type = (EditText)v.findViewById(R.id.type);
 
         return v;
     }
@@ -64,6 +69,22 @@ public class Material_upload extends Fragment {
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Material Upload");
         tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
+        
+        JSONArray ab = new JSONArray();
+        JSONObject obj = new JSONObject();
+
+        try {
+            obj.put("title",title.getText().toString());
+            obj.put("materialtype",type.getText().toString());
+            ab.put(obj);
+            Log.d("135", ab.toString());
+
+        } catch (JSONException e) {
+            Log.d("error111",""+e.getMessage());
+        }
+        MyTask2 mt2=new MyTask2();
+        mt2.execute(url2);
+
 
     }
 
@@ -76,6 +97,7 @@ public class Material_upload extends Fragment {
         if(savedInstanceState==null) {
             MyTask1 mt1 = new MyTask1();
             mt1.execute(url);
+
         }
 
     }
@@ -205,6 +227,63 @@ public class Material_upload extends Fragment {
                 String we="qwe";
                 Log.d("qwe",e.getMessage());
             }
+        }
+
+
+    }
+
+    class MyTask2 extends AsyncTask<String, String, String> {
+
+
+        public String doInBackground(String... params) {
+            String resp = null;
+
+            String weburl=params[0];
+
+            StringBuffer output=new StringBuffer();
+            try {
+                InputStream stream = null;
+                // start of code of connnetion
+                weburl=weburl+"?data="+params[1];
+                Log.d("url",weburl);
+                URL url = new URL(weburl);
+                URLConnection connection = url.openConnection();
+
+                String sd = "abcbjj";
+                Log.d("error41",sd);
+                HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                String sm = "bnhjbc";
+                Log.d("error42",sm);
+
+                httpConnection.setRequestMethod("GET");
+                String sg = "abcggh";
+                Log.d("error43",sg);
+                httpConnection.connect();
+                String sk = "abcmj";
+                Log.d("error44",sk);
+                stream = httpConnection.getInputStream();
+                String sl = "abckkii";
+                Log.d("error46",sl);
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "abc";
+                Log.d("error45",s);
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+            } catch (Exception e) {
+                Log.e("error62",e.getMessage());
+
+            }
+            return output.toString();
+
+
+        }
+
+
+
+        protected void onPostExecute(String output) {
+            String n="get is called";
+            Log.d("149",n);
+
         }
 
 
