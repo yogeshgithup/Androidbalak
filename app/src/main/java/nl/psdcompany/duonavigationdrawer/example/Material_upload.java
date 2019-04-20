@@ -55,8 +55,6 @@ public class Material_upload extends Fragment {
         //change R.layout.yourlayoutfilename for each of your fragments
         View v = inflater.inflate(R.layout.material_upload, container, false);
         imageButton = (ImageButton) v.findViewById(R.id.imageButton);
-        title =(EditText)v.findViewById(R.id.title);
-        type = (EditText)v.findViewById(R.id.type);
 
         return v;
     }
@@ -69,22 +67,8 @@ public class Material_upload extends Fragment {
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Material Upload");
         tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
-        
-        JSONArray ab = new JSONArray();
-        JSONObject obj = new JSONObject();
 
-        try {
-            obj.put("title",title.getText().toString());
-            obj.put("materialtype",type.getText().toString());
-            ab.put(obj);
-            Log.d("135", ab.toString());
-
-        } catch (JSONException e) {
-            Log.d("error111",""+e.getMessage());
-        }
-        MyTask2 mt2=new MyTask2();
-        mt2.execute(url2);
-
+//
 
     }
 
