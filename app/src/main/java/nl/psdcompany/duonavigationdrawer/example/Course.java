@@ -1,5 +1,6 @@
 package nl.psdcompany.duonavigationdrawer.example;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,8 @@ public class Course extends AppCompatActivity {
     private ArrayList<pojo_course> datalist;
     String url="http://192.168.1.27:8080/GETSWEB/SerCourseAndroid";
     TableLayout tableLayout;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,13 +114,16 @@ public class Course extends AppCompatActivity {
 //                   Log.d("edfrjkl",duration);
                     View tableRow = LayoutInflater.from(Course.this).inflate(R.layout.course_item,null,false);
                     TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
+
                     TextView subjectt= (TextView)tableRow.findViewById(R.id.subject);
+
                     TextView sectionn= (TextView)tableRow.findViewById(R.id.section);
                     TextView feess= (TextView)tableRow.findViewById(R.id.fees);
                     TextView durationn= (TextView)tableRow.findViewById(R.id.duration);
                     Log.d("115",jt.toString());
 
                     coursee.setText(course);
+
                     subjectt.setText(subject);
                     sectionn.setText(section);
                     feess.setText(String.format("%d",fees));
