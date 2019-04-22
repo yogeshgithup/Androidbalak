@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
+
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -26,9 +27,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+
 import java.util.ArrayList;
 
 public class Working_Schedule extends Fragment {
+
 
     private ArrayList<pojo_course> datalist;
     String url="http://192.168.1.27:8080/GETSWEB/SerCourseAndroid";
@@ -203,3 +206,4 @@ public class Working_Schedule extends Fragment {
 
     }
 }
+
