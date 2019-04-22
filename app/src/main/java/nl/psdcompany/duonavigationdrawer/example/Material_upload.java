@@ -59,6 +59,7 @@ public class Material_upload extends Fragment {
         //change R.layout.yourlayoutfilename for each of your fragments
         View v = inflater.inflate(R.layout.material_upload, container, false);
         imageButton = (ImageButton) v.findViewById(R.id.imageButton);
+
         imageButton2=(ImageButton)v.findViewById(R.id.imageButton2);
         title =(EditText)v.findViewById(R.id.title);
         type = (EditText)v.findViewById(R.id.type);
@@ -78,6 +79,7 @@ public class Material_upload extends Fragment {
         tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
 
 
+//
 
     }
 
