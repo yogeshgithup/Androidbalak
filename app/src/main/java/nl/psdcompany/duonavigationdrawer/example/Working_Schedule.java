@@ -10,8 +10,12 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
+
+import java.util.ArrayList;
 
 public class Working_Schedule extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -71,3 +75,4 @@ public class Working_Schedule extends Fragment {
     }
 
 }
+

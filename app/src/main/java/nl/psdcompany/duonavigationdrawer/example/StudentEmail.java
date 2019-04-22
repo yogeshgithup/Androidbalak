@@ -51,7 +51,7 @@ public class StudentEmail extends AppCompatActivity {
         }
 
         MyTask1 mt1 = new MyTask1();
-        mt1.execute("http://192.168.1.27:8080/GETSWEB/SerDetailsAndroid",ab.toString());
+        mt1.execute("http://192.168.1.57:8084/GETSWEB/SerDetailsAndroid",ab.toString());
 
     }
 
