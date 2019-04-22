@@ -16,7 +16,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -43,12 +52,18 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
     private MenuAdapter mMenuAdapter;
     private ViewHolder mViewHolder;
 
+
     private ArrayList<String> mTitles = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+
+
         mTitles = new ArrayList<>(Arrays.asList(getResources().getStringArray(menuOptions1)));
 
         // Initialize the views
@@ -194,10 +209,65 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
     public void MyClick (View imageButton) {
 
         Toast.makeText(MainAdmin.this,"clicked",Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
         startActivityForResult(intent, 7);
 
+    }
+
+    public void MyDone(View imageButton2)
+    {
+        ImageButton imgbtn=(ImageButton)imageButton2;
+        JSONArray ab = new JSONArray();
+        JSONObject obj = new JSONObject();
+
+        TableLayout tl=this.findViewById(R.id.tablelayout);
+        Log.d("count",""+tl.getChildCount());
+        String type="",title="";
+        String course="";
+        String subject="";
+        for(int i=1;i<tl.getChildCount();i++)
+        {
+            TableRow tb=(TableRow)tl.getChildAt(i);
+            ImageButton ib=(ImageButton)tb.getChildAt(tb.getChildCount()-1);
+            if(imgbtn==ib)
+            {
+                EditText ettype=(EditText)tb.getChildAt(3);
+                EditText ettitle=(EditText)tb.getChildAt(2);
+                TextView tvcourse=(TextView)tb.getChildAt(0);
+                TextView tvsubject=(TextView)tb.getChildAt(1);
+                type=ettype.getText().toString();
+                title=ettitle.getText().toString();
+                course=tvcourse.getText().toString();
+                subject=tvsubject.getText().toString();
+            }
+        }
+        Log.d("title",title);
+        Log.d("type",type);
+        Log.d("c_name",course);
+        Log.d("sub_name",subject);
+
+        try {
+
+            obj.put("title",title);
+            obj.put("materialtype",type);
+            obj.put("c_name",course);
+            obj.put("sub_name",subject);
+
+
+//            obj.put("course",type.getText().toString());
+//            obj.put("subject",type.getText().toString());
+            ab.put(obj);
+            Log.d("135", ab.toString());
+
+        } catch (JSONException e) {
+            Log.d("error111",""+e.getMessage());
+        }
+
+        Toast.makeText(MainAdmin.this,"uploaded",Toast.LENGTH_SHORT).show();
+        MyTask2 mt2=new MyTask2();
+        mt2.execute("http://192.168.1.27:8080/GETSWEB/AndroidDownload",ab.toString());
 
     }
 
@@ -296,5 +366,64 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
         }
 
     }
+
+    class MyTask2 extends AsyncTask<String, String, String> {
+
+
+        public String doInBackground(String... params) {
+            String resp = null;
+
+            String weburl=params[0];
+
+            StringBuffer output=new StringBuffer();
+            try {
+                InputStream stream = null;
+                // start of code of connnetion
+                weburl=weburl+"?data="+params[1];
+                Log.d("2url",weburl);
+                URL url = new URL(weburl);
+                URLConnection connection = url.openConnection();
+
+                String sd = "abcbjj";
+                Log.d("2error41",sd);
+                HttpURLConnection httpConnection = (HttpURLConnection) connection;
+                String sm = "bnhjbc";
+                Log.d("2error42",sm);
+
+                httpConnection.setRequestMethod("GET");
+                String sg = "abcggh";
+                Log.d("2error43",sg);
+                httpConnection.connect();
+                String sk = "abcmj";
+                Log.d("2error44",sk);
+                stream = httpConnection.getInputStream();
+                String sl = "abckkii";
+                Log.d("2error46",sl);
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+                String s = "abc";
+                Log.d("2error45",s);
+                while ((s = buffer.readLine()) != null)
+                    output.append(s);
+            } catch (Exception e) {
+                Log.e("2error62",e.getMessage());
+
+            }
+            return output.toString();
+
+
+        }
+
+
+
+        protected void onPostExecute(String output) {
+            String n="get is called";
+            Log.d("2149",n);
+
+        }
+
+
+    }
+
+
 }
 
