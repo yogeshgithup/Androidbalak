@@ -173,7 +173,10 @@ public class Course_details extends Fragment {
                     Log.d("167line",LayoutInflater.from(getContext())+"");
                     View tableRow =LayoutInflater.from(getContext()).inflate(R.layout.course_item,null,false);
                     TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
+
                     TextView feess= (TextView)tableRow.findViewById(R.id.fees);
+
+
                     TextView durationn= (TextView)tableRow.findViewById(R.id.duration);
                     TextView subjectt= (TextView)tableRow.findViewById(R.id.subject);
                     TextView sectionn= (TextView)tableRow.findViewById(R.id.section);

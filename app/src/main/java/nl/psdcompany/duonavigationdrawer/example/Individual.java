@@ -140,13 +140,13 @@ public class Individual extends AppCompatActivity {
                 Log.e("error62", e.getMessage());
 
             }
-            return output.toString();
+            return null;
 
 
         }
 
      protected void onPostExecute(String output) {
-         Toast.makeText(Individual.this, output, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(Individual.this, output, Toast.LENGTH_SHORT).show();
      }
     }
 
@@ -199,7 +199,7 @@ public class Individual extends AppCompatActivity {
 
 
         protected void onPostExecute(String output) {
-            Toast.makeText(Individual.this, output, Toast.LENGTH_SHORT).show();
+        //    Toast.makeText(Individual.this, output, Toast.LENGTH_SHORT).show();
             String n = "get is called";
             Log.d("149", output);
 

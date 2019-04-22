@@ -5,10 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
+    android:layout_margin="2dp"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".HomePage"
     android:id="@+id/smatm">
 
 
@@ -22,7 +21,6 @@
         android:paddingRight="1dp"
         android:stretchColumns="*"
         android:weightSum="1"
-        android:layout_marginTop="10dp"
         tools:ignore="Suspicious0dp">
 
         <TableRow
@@ -32,6 +30,11 @@
             android:layout_gravity="bottom"
             android:background="#FFFFFF">
 
+            <TextView
+                android:id="@+id/tvcourse"
+                style="@style/tabletextview"
+                android:padding="0dp"
+                android:text="Course" />
             <TextView
                 android:id="@+id/tvsub"
                 style="@style/tabletextview"
@@ -44,15 +47,19 @@
                 android:padding="0dp"
                 android:text="Title"
                 />
+            <TextView
+            android:id="@+id/tvtype"
+            style="@style/tabletextview"
+            android:padding="0dp"
+            android:text="Type"
+            />
 
             <TextView
-                android:id="@+id/tvprint"
+                android:id="@+id/tvfilepath"
                 style="@style/tabletextview"
-
                 android:padding="0dp"
-                android:text="Print"
+                android:text="Filepath"
                 />
-
             <TextView
                 android:id="@+id/tvdownload"
                 style="@style/tabletextview"
@@ -75,6 +82,7 @@
         tools:ignore="Suspicious0dp">
 
         <TableLayout
+            android:id='@+id/tablelayout'
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="top"
@@ -89,53 +97,104 @@
                 android:layout_gravity="bottom">
 
                 <TextView
-                    android:id="@+id/tvsub1"
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/course"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     android:layout_marginLeft="1dp"
+
+                    android:scrollbars="vertical"
                     android:layout_weight="1"
-                    android:background="#FFF"
-                    android:gravity="left"
-                    android:paddingBottom="5dp"
+                    android:background="#f26021"
+                    android:gravity="center"
                     android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
                     android:paddingTop="5dp"
-                    android:text="Subject"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+                <TextView
+                    android:id="@+id/subject"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:scrollbars="vertical"
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <TextView
-                    android:id="@+id/tvtitle1"
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/type"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
                     android:layout_marginLeft="1dp"
+
                     android:layout_weight="1"
-                    android:background="#FFF"
-                    android:gravity="left"
-                    android:paddingBottom="5dp"
+                    android:background="#f26021"
+                    android:gravity="center"
                     android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
                     android:paddingTop="5dp"
-                    android:text="Title"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/filepath"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
 
                 <ImageButton
-                    android:id="@+id/imageButton6"
+                    android:id="@+id/imageButton"
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:adjustViewBounds="false"
-                    android:backgroundTint="#FFFFFF"
-                    android:cropToPadding="false"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/print1" />
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
 
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:backgroundTint="#FFFFFF"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/download1" />
+                    android:onClick="MyDownload"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:src="@drawable/download" />
+
+
+
+
+
 
 
             </TableRow>

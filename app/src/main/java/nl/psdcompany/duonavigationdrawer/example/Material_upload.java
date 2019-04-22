@@ -1,3 +1,4 @@
+
 package nl.psdcompany.duonavigationdrawer.example;
 
 import android.content.DialogInterface;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -17,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,11 +43,13 @@ import static android.app.Activity.RESULT_OK;
 public class Material_upload extends Fragment {
 
         private ArrayList<pojo_course> datalist;
-        String url="http://192.168.1.57:8084/GETSWEB/SerCourseAndroid";
-        String url2="http://192.168.1.57:8084/GETSWEB/AndroidDownload";
+        String url="http://192.168.1.27:8080/GETSWEB/SerCourseAndroid";
+
         TableLayout tableLayout;
-        ImageButton imageButton;
+        ImageButton imageButton,imageButton2;
         EditText title,type;
+        TextView course,subject;
+
 
 
     public Material_upload() {
@@ -55,8 +60,12 @@ public class Material_upload extends Fragment {
         //change R.layout.yourlayoutfilename for each of your fragments
         View v = inflater.inflate(R.layout.material_upload, container, false);
         imageButton = (ImageButton) v.findViewById(R.id.imageButton);
+
+        imageButton2=(ImageButton)v.findViewById(R.id.imageButton2);
         title =(EditText)v.findViewById(R.id.title);
         type = (EditText)v.findViewById(R.id.type);
+        course=(TextView)v.findViewById(R.id.course);
+        subject=(TextView)v.findViewById(R.id.subject);
 
         return v;
     }
@@ -69,36 +78,25 @@ public class Material_upload extends Fragment {
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Material Upload");
         tableLayout=(TableLayout)view.findViewById(R.id.tablelayout);
-        
-        JSONArray ab = new JSONArray();
-        JSONObject obj = new JSONObject();
 
-        try {
-            obj.put("title",title.getText().toString());
-            obj.put("materialtype",type.getText().toString());
-            ab.put(obj);
-            Log.d("135", ab.toString());
 
-        } catch (JSONException e) {
-            Log.d("error111",""+e.getMessage());
-        }
-        MyTask2 mt2=new MyTask2();
-        mt2.execute(url2);
-
+//
 
     }
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
 
-
         if(savedInstanceState==null) {
+
             MyTask1 mt1 = new MyTask1();
             mt1.execute(url);
 
         }
+
 
     }
 
@@ -209,16 +207,19 @@ public class Material_upload extends Fragment {
                     Log.d("167line",LayoutInflater.from(getContext())+"");
                     View tableRow =LayoutInflater.from(getContext()).inflate(R.layout.material_item,null,false);
                     TextView coursee  = (TextView)tableRow.findViewById(R.id.course);
+
+
                     TextView subjectt= (TextView)tableRow.findViewById(R.id.subject);
 
-
                     Log.d("115",jt.toString());
-
                     coursee.setText(course);
                     subjectt.setText(subject);
-
-
                     tableLayout.addView(tableRow);
+
+
+
+
+
 
                 }
 
@@ -232,62 +233,5 @@ public class Material_upload extends Fragment {
 
     }
 
-    class MyTask2 extends AsyncTask<String, String, String> {
-
-
-        public String doInBackground(String... params) {
-            String resp = null;
-
-            String weburl=params[0];
-
-            StringBuffer output=new StringBuffer();
-            try {
-                InputStream stream = null;
-                // start of code of connnetion
-                weburl=weburl+"?data="+params[1];
-                Log.d("url",weburl);
-                URL url = new URL(weburl);
-                URLConnection connection = url.openConnection();
-
-                String sd = "abcbjj";
-                Log.d("error41",sd);
-                HttpURLConnection httpConnection = (HttpURLConnection) connection;
-                String sm = "bnhjbc";
-                Log.d("error42",sm);
-
-                httpConnection.setRequestMethod("GET");
-                String sg = "abcggh";
-                Log.d("error43",sg);
-                httpConnection.connect();
-                String sk = "abcmj";
-                Log.d("error44",sk);
-                stream = httpConnection.getInputStream();
-                String sl = "abckkii";
-                Log.d("error46",sl);
-                BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
-                String s = "abc";
-                Log.d("error45",s);
-                while ((s = buffer.readLine()) != null)
-                    output.append(s);
-            } catch (Exception e) {
-                Log.e("error62",e.getMessage());
-
-            }
-            return output.toString();
-
-
-        }
-
-
-
-        protected void onPostExecute(String output) {
-            String n="get is called";
-            Log.d("149",n);
-
-        }
-
-
-    }
-
-
 }
+
