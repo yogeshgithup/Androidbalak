@@ -47,7 +47,7 @@ import java.util.List;
 public class Main2Activity extends AppCompatActivity {
     private Button btn;
     private ImageView imageview;
-    private static final String IMAGE_DIRECTORY = "/demonuts";
+    private static final String IMAGE_DIRECTORY = "/gets";
     private int GALLERY = 1, CAMERA = 2;
     int serverResponseCode = 0;
 

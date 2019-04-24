@@ -8,6 +8,7 @@
         android:background="#fcfcfa"
         android:layout_margin="5dp"
         android:id="@+id/hpm"
+
         android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"

@@ -12,7 +12,7 @@
     <TableLayout
         android:id="@+id/tb2"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:paddingLeft="1dp"
         android:paddingRight="1dp"
@@ -32,14 +32,14 @@
             <TextView
                 android:id="@+id/tvday"
                 style="@style/tabletextview"
-                android:text=""
+                android:text="Day"
                 android:padding="0dp"
                 />
 
             <TextView
-                android:id="@+id/tvsub"
+                android:id="@+id/tvshift"
                 style="@style/tabletextview"
-                android:text=""
+                android:text="Shift"
                 android:padding="0dp"
                 />
 
@@ -47,64 +47,20 @@
                 android:id="@+id/tvslot"
                 style="@style/tabletextview"
                 android:padding="0dp"
-                android:layout_weight="2"
+
                 android:text="Slot" />
 
             <TextView
-                android:id="@+id/tvbreak"
+                android:id="@+id/tvbatch"
                 style="@style/tabletextview"
                 android:padding="0dp"
-                android:layout_weight="2"
-                android:text="BreakTime"
+
+                android:text="Batch Name"
                 />
 
 
         </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.2"
-            android:layout_gravity="bottom"
-            android:background="#FFFFFF"
-            android:weightSum="6">
 
-            <TextView
-                android:id="@+id/tvday1"
-                style="@style/tabletextview"
-                android:text="Day"
-                android:padding="0dp"
-                />
-
-            <TextView
-                android:id="@+id/tvsub1"
-                style="@style/tabletextview"
-                android:text="Subject"
-                android:padding="0dp"
-                />
-
-            <TextView
-                android:id="@+id/tvslot11"
-                style="@style/tabletextview"
-                android:padding="0dp"
-                android:text="Start-time" />
-            <TextView
-                android:id="@+id/tvslot12"
-                style="@style/tabletextview"
-                android:text="End-time" />
-
-            <TextView
-                android:id="@+id/tvslot21"
-                style="@style/tabletextview"
-                android:padding="0dp"
-                android:text="Start-time" />
-            <TextView
-                android:id="@+id/tvslot22"
-                style="@style/tabletextview"
-                android:padding="0dp"
-                android:text="End-time" />
-
-
-        </TableRow>
 
 
     </TableLayout>
@@ -154,7 +110,22 @@
                     android:visibility="invisible" />
 
                 <TextView
-                    android:id="@+id/subject"
+                    android:id="@+id/shift"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="1dp"
+
+                    android:layout_weight="1"
+                    android:background="#f26021"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:visibility="invisible" />
+                <TextView
+                    android:id="@+id/slot"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginLeft="1dp"
@@ -170,7 +141,7 @@
                     android:visibility="invisible" />
 
                 <TextView
-                    android:id="@+id/start1"
+                    android:id="@+id/batch"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginLeft="1dp"
@@ -185,52 +156,6 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:visibility="invisible" />
 
-                <TextView
-                    android:id="@+id/end1"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="1dp"
-
-                    android:layout_weight="1"
-                    android:background="#f26021"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible" />
-
-                <TextView
-                    android:id="@+id/start2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="1dp"
-
-                    android:layout_weight="1"
-                    android:background="#f26021"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible" />
-                <TextView
-                    android:id="@+id/end2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="1dp"
-
-                    android:layout_weight="1"
-                    android:background="#f26021"
-                    android:gravity="center"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:visibility="invisible" />
 
             </TableRow>
 

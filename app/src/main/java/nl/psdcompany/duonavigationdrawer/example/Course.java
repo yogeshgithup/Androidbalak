@@ -137,7 +137,7 @@ public class Course extends AppCompatActivity {
                 String we="qwe";
                 Log.d("qwe",e.getMessage());
             }
-            Toast.makeText(Course.this, s, Toast.LENGTH_SHORT).show();
+
             String n="get is called";
             Log.d("149",n);
         }
