@@ -114,9 +114,6 @@ public class MainStaff extends AppCompatActivity implements DuoMenuView.OnMenuCl
                 goToFragment(new Material_upload(),false);
                 break;
             case 1:
-                goToFragment(new Working_Schedule(),false);
-                break;
-            case 2:
                 goToFragment(new Feedback(),false);
                 break;
             default:

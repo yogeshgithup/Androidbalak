@@ -90,7 +90,7 @@ public class HomePage extends AppCompatActivity {
 
                 MyTask1 mt1 = new MyTask1();
 
-                mt1.execute("http://192.168.1.57:8084/GETSWEB/SerLogin", ab.toString());
+                mt1.execute("http://192.168.1.27:8080/GETSWEB/SerLogin", ab.toString());
 
 
             }
@@ -114,7 +114,7 @@ public class HomePage extends AppCompatActivity {
         });
 
         MyTask2 mt2=new MyTask2();
-        mt2.execute("http://192.168.1.57:8084/GETSWEB/SerAndroidLayout");
+        mt2.execute("http://192.168.1.27:8080/GETSWEB/SerAndroidLayout");
 
 
     }

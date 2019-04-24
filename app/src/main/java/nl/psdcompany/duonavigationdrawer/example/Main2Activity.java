@@ -47,7 +47,7 @@ import java.util.List;
 public class Main2Activity extends AppCompatActivity {
     private Button btn;
     private ImageView imageview;
-    private static final String IMAGE_DIRECTORY = "/demonuts";
+    private static final String IMAGE_DIRECTORY = "/gets";
     private int GALLERY = 1, CAMERA = 2;
     int serverResponseCode = 0;
 
@@ -140,7 +140,7 @@ public class Main2Activity extends AppCompatActivity {
         // create asyn obj
         MyTask1 mt1 = new MyTask1();
 
-        mt1.execute("http://192.168.1.57:8084/GETSWEB/SerPersonAndroid",path);
+        mt1.execute("http://192.168.1.27:8080/GETSWEB/SerPersonAndroid",path);
 
 
 

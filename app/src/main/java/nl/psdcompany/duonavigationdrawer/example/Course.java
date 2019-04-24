@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class Course extends AppCompatActivity {
     private ArrayList<pojo_course> datalist;
-    String url="http://192.168.1.57:8084/GETSWEB/SerCourseAndroid";
+    String url="http://192.168.1.27:8080/GETSWEB/SerCourseAndroid";
     TableLayout tableLayout;
 
 
@@ -137,7 +137,7 @@ public class Course extends AppCompatActivity {
                 String we="qwe";
                 Log.d("qwe",e.getMessage());
             }
-            Toast.makeText(Course.this, s, Toast.LENGTH_SHORT).show();
+
             String n="get is called";
             Log.d("149",n);
         }
