@@ -49,7 +49,7 @@ public class BatchWise extends AppCompatActivity {
 
         MyTask1 mt1 = new MyTask1();
 
-        mt1.execute("http://192.168.1.57:8084/GETSWEB/SerSpinnerBatchAndroid");
+        mt1.execute("http://192.168.1.27:8080/GETSWEB/SerSpinnerBatchAndroid");
 
 
 
@@ -91,7 +91,7 @@ public class BatchWise extends AppCompatActivity {
 
 
                 MyTask2 mt2 = new MyTask2();
-                mt2.execute("http://192.168.1.57:8080/GETSWEB/SerBatchwiseAndroid", ab.toString());
+                mt2.execute("http://192.168.1.27:8080/GETSWEB/SerBatchwiseAndroid", ab.toString());
 
 
             }

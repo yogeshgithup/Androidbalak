@@ -287,7 +287,7 @@ public class MainAdmin extends AppCompatActivity implements DuoMenuView.OnMenuCl
                        Toast.makeText(MainAdmin.this, path, Toast.LENGTH_LONG).show();
 
                     MyTask1 mt1 = new MyTask1();
-                    mt1.execute("http://192.168.1.57:8084/GETSWEB/AndroidDownload",path);
+                    mt1.execute("http://192.168.1.27:8080/GETSWEB/AndroidDownload",path);
                 }
                 break;
         }
