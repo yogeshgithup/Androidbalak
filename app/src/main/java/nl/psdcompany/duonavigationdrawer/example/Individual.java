@@ -46,7 +46,7 @@ public class Individual extends AppCompatActivity {
 
         MyTask1 mt1 = new MyTask1();
 
-        mt1.execute("http://192.168.1.57:8084/GETSWEB/SerSpinnerAndroid");
+        mt1.execute("http://192.168.1.27:8080/GETSWEB/SerSpinnerAndroid");
 
 
 
@@ -88,7 +88,7 @@ public class Individual extends AppCompatActivity {
 
 
                 MyTask2 mt2 = new MyTask2();
-                mt2.execute("http://192.168.1.57:8084/GETSWEB/SerIndividualAndroid", ab.toString());
+                mt2.execute("http://192.168.1.27:8080/GETSWEB/SerIndividualAndroid", ab.toString());
 
             }
 
